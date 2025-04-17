@@ -7,6 +7,9 @@
 *.o
 *.obj
 
+# vscode directory files 
+.vscode/
+
 # Precompiled Headers
 *.gch
 *.pch
