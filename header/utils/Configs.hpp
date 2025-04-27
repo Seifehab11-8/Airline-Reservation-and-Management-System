@@ -31,13 +31,4 @@ enum BookingAgentMenuOption {
     LOGOUT
 };
 
-enum MainMenuOption {
-    OP1 = 1,
-    OP2,
-    OP3,
-    OP4,
-    OP5
-};
-
-
 #endif

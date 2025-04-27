@@ -17,6 +17,6 @@ class User : public Person{
     bool setPassword(std::string password, std::string oldPassword);
     std::string getUsername() const;
     std::string getPassword() const;
-    virtual MainMenuOption viewMainMenu() = 0;
+    virtual void viewMainMenu() = 0;
 };
 #endif

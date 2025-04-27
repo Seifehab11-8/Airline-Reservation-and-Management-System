@@ -8,7 +8,7 @@ class Administrator : public User{
     Administrator(const Administrator& other) = default;
     Administrator(Administrator&&other) = default;
     Administrator(std::string username, std::string password);
-    MainMenuOption viewMainMenu();
+    void viewMainMenu();
 };
 
 #endif 

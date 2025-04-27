@@ -22,13 +22,11 @@ endif()
 # List specific source files
 set(SOURCES
     src/main.cpp
-    src/creation/factory/user/ConcreteUserFactory.cpp
+    src/factory/ConcreteUserFactory.cpp
 )
 
 set(HEADERS
-    header/creation/factory/user/ConcreteUserFactory.hpp
-    header/creation/factory/user/ConcreteUserFactory.hpp
-    header/creation/factory/user/ConcreteUserFactory.hpp
+    header/factory/ConcreteUserFactory.hpp
 )
 
 # Add executable with explicit source files
