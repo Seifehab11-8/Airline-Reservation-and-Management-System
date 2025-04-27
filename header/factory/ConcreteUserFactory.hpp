@@ -3,7 +3,11 @@
 
 #include "UserFactory.hpp"
 class ConcreteUserFactory : public UserFactory {
-
+    public:
+    ConcreteUserFactory() = default;
+    ConcreteUserFactory(const ConcreteUserFactory&other) =default;
+    ConcreteUserFactory(ConcreteUserFactory&&other) =default;
+    UserPtr create(UserRole role) override;
 };
 
 #endif

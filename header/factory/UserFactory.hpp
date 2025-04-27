@@ -10,7 +10,9 @@ using UserPtr = std::shared_ptr<User>;
 class UserFactory {
     public:
     UserFactory() = default;
-    virtual UserPtr create(OptionSelect option) = 0;
+    UserFactory(const UserFactory&other) = default;
+    UserFactory(UserFactory &&other) = default;
+    virtual UserPtr create(UserRole role) = 0;
     virtual ~UserFactory() = default;
 };
 
