@@ -21,12 +21,31 @@ endif()
 
 # List specific source files
 set(SOURCES
-    src/main.cpp
-    src/factory/ConcreteUserFactory.cpp
+    # src/main.cpp
+    # src/person/Person.cpp
+    # src/person/User.cpp
+    # src/person/BookingAgent.cpp
+    # src/person/Administrator.cpp
+    # src/person/Passenger.cpp
+    # src/factory/ConcreteUserFactory.cpp
+    # header/utils/exceptions/Undefined_role_exception.hpp
+    # src/utils/IOStreamHelper.cpp
+    # src/APP.cpp
+
 )
 
 set(HEADERS
-    header/factory/ConcreteUserFactory.hpp
+    # header/person/Person.hpp    
+    # header/person/User.hpp    
+    # header/person/BookingAgent.hpp
+    # header/person/Administrator.hpp
+    # header/person/Passenger.hpp
+    # header/factory/UserFactory.hpp
+    # header/factory/ConcreteUserFactory.hpp
+    # header/utils/Configs.hpp
+    # src/utils/exceptions/Undefined_role_exception.cpp
+    # header/utils/IOStreamHelper.hpp
+    # header/APP.hpp
 )
 
 # Add executable with explicit source files

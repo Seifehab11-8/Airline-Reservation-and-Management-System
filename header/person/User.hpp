@@ -2,7 +2,7 @@
 #define _USER_HPP
 #include "Person.hpp"
 #include "../utils/Configs.hpp"
-
+#include <string>
 class User : public Person{
     protected:
     std::string username;

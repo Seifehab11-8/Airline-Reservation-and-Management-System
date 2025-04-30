@@ -1,3 +1,6 @@
+#ifndef _UNDEFINED_ROLE_EXCEPTION_HPP
+#define _UNDEFINED_ROLE_EXCEPTION_HPP
+
 #include <stdexcept>
 #include <string>
 
@@ -11,3 +14,5 @@ class Undefined_role_exception : public std::exception{
     Undefined_role_exception(Undefined_role_exception&&other) = default;
     const char* what() const noexcept override;
 };
+
+#endif

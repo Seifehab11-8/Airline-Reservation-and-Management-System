@@ -5,6 +5,7 @@
 #include <memory>
 #include "../person/Passenger.hpp"
 #include "../utils/Configs.hpp"
+#include <string>
 
 using UserPtr = std::shared_ptr<User>;
 class UserFactory {
@@ -12,7 +13,7 @@ class UserFactory {
     UserFactory() = default;
     UserFactory(const UserFactory&other) = default;
     UserFactory(UserFactory &&other) = default;
-    virtual UserPtr create(UserRole role) = 0;
+    virtual UserPtr create(LoginAction::UserRole role, std::string username, std::string password) = 0;
     virtual ~UserFactory() = default;
 };
 
