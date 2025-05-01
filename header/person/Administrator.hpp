@@ -6,7 +6,7 @@ class Administrator : public User{
     private:
     //pointer to manager type to use or own a manager pointer
     public:
-    Administrator() = delete;
+    Administrator() = default;
     Administrator(const Administrator& other) = default;
     Administrator(Administrator&&other) = default;
     Administrator(std::string username, std::string password);

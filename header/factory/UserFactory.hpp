@@ -9,6 +9,8 @@
 
 using UserPtr = std::shared_ptr<User>;
 class UserFactory {
+    protected:
+    UserPtr u_ptr;
     public:
     UserFactory() = default;
     UserFactory(const UserFactory&other) = default;

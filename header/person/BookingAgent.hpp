@@ -3,8 +3,9 @@
 #include "User.hpp"
 #include <string>
 class BookingAgent : public User{
+    private:
     public:
-    BookingAgent() = delete;
+    BookingAgent() = default;
     BookingAgent(const BookingAgent& other) = default;
     BookingAgent(BookingAgent&&other) = default;
     BookingAgent(std::string username, std::string password);

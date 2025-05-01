@@ -8,15 +8,19 @@ UserPtr ConcreteUserFactory::create(LoginAction::UserRole role, std::string user
 {
     switch(role) {
         case LoginAction::UserRole::ADMIN:
-            return std::make_shared<Administrator>(username, password);
+            u_ptr = std::make_shared<Administrator>(username, password);
+            u_ptr->setRole("admin");
             break;
         case LoginAction::UserRole::PASSENGER:
-            return std::make_shared<Passenger>(username, password);
+            u_ptr = std::make_shared<Passenger>(username, password);
+            u_ptr->setRole("passenger");
             break;
         case LoginAction::UserRole::BOOKING_AGENT:
-            return std::make_shared<BookingAgent>(username, password);
+            u_ptr = std::make_shared<BookingAgent>(username, password);
+            u_ptr->setRole("booking agent");
             break;
         default:
             throw Undefined_role_exception("This role doesn't exist");
     }
+    return std::move(u_ptr);
 }

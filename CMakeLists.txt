@@ -28,10 +28,11 @@ set(SOURCES
     # src/person/Administrator.cpp
     # src/person/Passenger.cpp
     # src/factory/ConcreteUserFactory.cpp
-    # header/utils/exceptions/Undefined_role_exception.hpp
+    # src/utils/exceptions/Undefined_role_exception.cpp
     # src/utils/IOStreamHelper.cpp
     # src/APP.cpp
-
+    src/utils/FileManager.cpp
+    functional_testing/fileManagerTest001.cpp
 )
 
 set(HEADERS
@@ -43,9 +44,10 @@ set(HEADERS
     # header/factory/UserFactory.hpp
     # header/factory/ConcreteUserFactory.hpp
     # header/utils/Configs.hpp
-    # src/utils/exceptions/Undefined_role_exception.cpp
+    # header/utils/exceptions/Undefined_role_exception.hpp
     # header/utils/IOStreamHelper.hpp
     # header/APP.hpp
+    header/utils/FileManager.hpp
 )
 
 # Add executable with explicit source files

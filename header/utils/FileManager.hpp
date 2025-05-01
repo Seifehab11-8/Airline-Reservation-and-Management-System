@@ -5,9 +5,9 @@
 #include <string>
 #include <memory>
 
-using File_ptr = std::shared_ptr<std::fstream>();
-static constexpr std::ios_base::openmode APPEND = std::ios_base::app;
-static constexpr std::ios_base::openmode OVERWRITE = (std::ios_base::out | std::ios_base::trunc);
+using File_ptr = std::shared_ptr<std::fstream>;
+static constexpr std::ios_base::openmode APPEND = (std::ios_base::out | std::ios_base::in);
+static constexpr std::ios_base::openmode OVERWRITE = (std::ios_base::out | std::ios_base::in | std::ios_base::trunc);
 
 class FileManager {
     private:
@@ -18,8 +18,9 @@ class FileManager {
     FileManager() = delete;
     FileManager(const FileManager &other) = default;
     FileManager(FileManager && other) = default;
-    bool append(std::string text, int pos = -1);
-    std::string read(int pos, int numOfChar);
+    virtual ~FileManager();
+    bool append(std::string text, int offset = 0);
     int getFileSize();
+    File_ptr getFstream();
 };
 #endif // !_FILE_MANAGER_HPP

@@ -16,6 +16,21 @@ bool User::setPassword(std::string password, std::string oldPassword)
     return false;
 }
 
+void User::setPassword(std::string password)
+{
+    this->password = password;
+}
+
+void User::setLoginStatus(bool state)
+{
+    loginStatus = state;
+}
+
+bool User::getLoginStatus() const
+{
+    return loginStatus;
+}
+
 std::string User::getUsername() const
 {
     return username;

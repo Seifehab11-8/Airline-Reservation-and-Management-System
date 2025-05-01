@@ -1,69 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\main.cpp">
+    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\utils\FileManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\person\Person.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\person\User.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\person\BookingAgent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\person\Administrator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\person\Passenger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\factory\ConcreteUserFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\utils\IOStreamHelper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\APP.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\src\utils\exceptions\Undefined_role_exception.cpp">
+    <ClCompile Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\functional_testing\fileManagerTest001.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\utils\exceptions\Undefined_role_exception.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\person\Person.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\person\User.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\person\BookingAgent.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\person\Administrator.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\person\Passenger.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\factory\UserFactory.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\factory\ConcreteUserFactory.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\utils\Configs.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\utils\IOStreamHelper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\APP.hpp">
+    <ClInclude Include="C:\Users\semaz\OneDrive\Documents\Software_Development\Airline-Reservation-and-Management-System\header\utils\FileManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
