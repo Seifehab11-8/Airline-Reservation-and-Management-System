@@ -9,7 +9,7 @@ class User : public Person{
     std::string password;
     bool loginStatus;
     public:
-    User() = delete;
+    User() = default;
     User(const User&other) = default;
     User(User&&other) =default;
     User(std::string username, std::string password);

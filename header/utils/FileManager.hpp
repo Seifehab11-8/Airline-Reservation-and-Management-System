@@ -19,7 +19,7 @@ class FileManager {
     FileManager(const FileManager &other) = default;
     FileManager(FileManager && other) = default;
     virtual ~FileManager();
-    bool append(std::string text, int offset = 0);
+    bool append(std::string text, int offse = 0, bool overwriteFlag = false);
     int getFileSize();
     File_ptr getFstream();
 };

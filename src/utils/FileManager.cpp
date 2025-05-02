@@ -15,13 +15,13 @@ FileManager::~FileManager()
     f_ptr->close();
 }
 
-bool FileManager::append(std::string text, int offset)
+bool FileManager::append(std::string text, int offset, bool overwriteFlag)
 {
     if(f_ptr != nullptr) {
-        if(offset <= 0) {
+        if(offset <= 0 && overwriteFlag == false) {
             f_ptr->seekp(offset, std::ios_base::end);
         }
-        else if(offset > 0) {
+        else if(offset >= 0 && overwriteFlag == true) {
             f_ptr->seekp(offset, std::ios_base::beg);
         }
 

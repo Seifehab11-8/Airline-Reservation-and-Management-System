@@ -7,7 +7,7 @@ namespace nlohmann
     template<>
     struct adl_serializer<BookingAgent>
     {
-        void to_json(json &j, const BookingAgent &bookingAgent)
+        static void to_json(json &j, const BookingAgent &bookingAgent)
         {
             j = json {
                 {"name", bookingAgent.getName()},
@@ -19,7 +19,7 @@ namespace nlohmann
             };
         }
 
-        void from_json(json &j, BookingAgent &bookingAgent)
+        static void from_json(json &j, BookingAgent &bookingAgent)
         {
             try{
                 bookingAgent.setName(j.at("name").get<std::string>());

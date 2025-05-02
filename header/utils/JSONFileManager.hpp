@@ -2,6 +2,7 @@
 #define _JSON_FILE_MANAGER_HPP
 #include "FileManager.hpp"
 #include <string>
+#include <deque>
 #include "../nlohmann/json.hpp"
 #include "../nlohmann/adl_serializer_admin.hpp"
 #include "../nlohmann/adl_serializer_aircraft.hpp"
@@ -31,7 +32,7 @@ template <typename type>
 inline type JSONFileManager::read(int index)
 {
     if(index < jsonArray.size()) {
-        return jsonArray[index];
+        return jsonArray.at(index);
     }
     return type();
 }

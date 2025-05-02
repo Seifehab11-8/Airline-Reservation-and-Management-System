@@ -3,9 +3,23 @@
 JSONFileManager::JSONFileManager(std::string path)
 {
     file_mPtr = std::make_shared<FileManager>(path, APPEND);
-    jsonArray = json::parse(*(file_mPtr->getFstream()));
-    file_mPtr->getFstream()->close();
-    file_mPtr->getFstream()->open(path, OVERWRITE);
+    if(file_mPtr->getFstream() == nullptr) {
+        std::cerr<<"Error: File not found\n";
+        return;
+    }
+    try{
+        if(file_mPtr->getFileSize() > 2) {
+            jsonArray = json::parse(*(file_mPtr->getFstream().get()));
+        }
+        else {
+            jsonArray = json::array();
+        }
+        file_mPtr->getFstream()->close();
+        file_mPtr->getFstream()->open(path, OVERWRITE);
+    }
+    catch(const std::exception &e){
+        std::cerr<<e.what()<<std::endl;
+    }
 }
 bool JSONFileManager::append(json jsonObj, int index)
 {
@@ -16,7 +30,10 @@ bool JSONFileManager::append(json jsonObj, int index)
         auto it = jsonArray.begin() + index;
         jsonArray.insert(it , jsonObj);
     }
-    file_mPtr->append(jsonArray.dump());
+    std::cout<<jsonArray.dump(4);
+    bool store_flag = file_mPtr->append(jsonArray.dump(4),0, true);
+    
+    return store_flag;
 }
 
 int JSONFileManager::getFileSize() {
