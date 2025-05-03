@@ -1,1 +1,92 @@
-[{"contact":"0100023445","flight history":["AA123"],"id":1,"login state":true,"name":"John Doe","notification":["Flight AA123 is delayed"],"password":"password123","preference":["Window seat"],"role":"Passenger","username":"johndoe"}]
+[
+    {
+        "contact": "0100023445",
+        "flight history": [
+            "AA123"
+        ],
+        "id": 1,
+        "login status": true,
+        "name": "doe Doe",
+        "notification": [
+            "Flight AA123 is delayed"
+        ],
+        "password": "password123",
+        "preference": [
+            "Window seat"
+        ],
+        "role": "Passenger",
+        "username": "doe"
+    },
+    {
+        "contact": "0100023445",
+        "flight history": [
+            "AA123"
+        ],
+        "id": 1,
+        "login status": true,
+        "name": "doe Doe",
+        "notification": [
+            "Flight AA123 is delayed"
+        ],
+        "password": "password123",
+        "preference": [
+            "Window seat"
+        ],
+        "role": "Passenger",
+        "username": "doe"
+    },
+    {
+        "contact": "0100023445",
+        "flight history": [
+            "AA123"
+        ],
+        "id": 1,
+        "login status": true,
+        "name": "doe Doe",
+        "notification": [
+            "Flight AA123 is delayed"
+        ],
+        "password": "password123",
+        "preference": [
+            "Window seat"
+        ],
+        "role": "Passenger",
+        "username": "doe"
+    },
+    {
+        "contact": "0100023445",
+        "flight history": [
+            "AA123"
+        ],
+        "id": 75475,
+        "login status": true,
+        "name": "doe Doe",
+        "notification": [
+            "Flight AA123 is delayed"
+        ],
+        "password": "password123",
+        "preference": [
+            "Window seat"
+        ],
+        "role": "Passenger",
+        "username": "doe"
+    },
+    {
+        "contact": "0100023445",
+        "flight history": [
+            "AA123"
+        ],
+        "id": 68597,
+        "login status": true,
+        "name": "doe Doe",
+        "notification": [
+            "Flight AA123 is delayed"
+        ],
+        "password": "password123",
+        "preference": [
+            "Window seat"
+        ],
+        "role": "Passenger",
+        "username": "doe"
+    }
+]

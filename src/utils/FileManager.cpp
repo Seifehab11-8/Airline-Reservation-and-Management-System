@@ -17,6 +17,7 @@ FileManager::~FileManager()
 
 bool FileManager::append(std::string text, int offset, bool overwriteFlag)
 {
+    
     if(f_ptr != nullptr) {
         if(offset <= 0 && overwriteFlag == false) {
             f_ptr->seekp(offset, std::ios_base::end);
@@ -24,7 +25,6 @@ bool FileManager::append(std::string text, int offset, bool overwriteFlag)
         else if(offset >= 0 && overwriteFlag == true) {
             f_ptr->seekp(offset, std::ios_base::beg);
         }
-
         (*f_ptr) << text;
         return true;
     }
@@ -35,8 +35,11 @@ bool FileManager::append(std::string text, int offset, bool overwriteFlag)
 int FileManager::getFileSize()
 {
     if(f_ptr == nullptr) return 0;
+    int current = (static_cast<int>(f_ptr->tellg()));
     f_ptr->seekg(0, std::ios_base::end);
-    return (static_cast<int>(f_ptr->tellg()) + 1);
+    int size  = (static_cast<int>(f_ptr->tellg()) + 1);
+    f_ptr->seekg(current, std::ios_base::beg);
+    return size;
 }
 
 File_ptr FileManager::getFstream()

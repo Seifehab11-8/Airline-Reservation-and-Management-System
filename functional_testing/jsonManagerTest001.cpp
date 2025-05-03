@@ -8,18 +8,19 @@ int main() {
     p1.appendPreference("Window seat");
     p1.setContact("0100023445");
     p1.setID(1);
-    p1.setName("seif Doe");
+    p1.setName("doe Doe");
     p1.setRole("Passenger");
-    p1.setUsername("seif");
+    p1.setUsername("doe");
     p1.setPassword("password123");
     p1.setLoginStatus(true);
-    // try{
-    //     std::cout<<j_manager.read<Passenger>(0).getName()<<std::endl;
-    // }
+    Passenger p2 = j_manager.read<Passenger>(0);
+        std::cout<<j_manager.read<Passenger>(0).getName()<<std::endl;
     // catch(const std::exception &e) {
     //     std::cerr<<"Error: "<<e.what()<<std::endl;
     // }
-    std::cout<<j_manager.append(p1);
+    j_manager.erase(2);
+    std::cout<<std::endl;
+    //std::cout<<j_manager.append(p1);
 }
 
 // compliation command

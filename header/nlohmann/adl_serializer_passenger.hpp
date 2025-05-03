@@ -15,7 +15,7 @@ namespace nlohmann
                 {"username", passenger.getUsername()},
                 {"password", passenger.getPassword()},
                 {"role", passenger.getRole()},
-                {"login state", passenger.getLoginStatus()},
+                {"login status", passenger.getLoginStatus()},
                 {"contact", passenger.getContact()},
                 {"preference", passenger.getPreference()},
                 {"flight history", passenger.getFlightHistory()},
@@ -23,7 +23,7 @@ namespace nlohmann
             };
         }
 
-        static void from_json(json &j, Passenger &passenger)
+        static void from_json(const json &j, Passenger &passenger)
         {
             try{
                 passenger.setName(j.at("name").get<std::string>());
@@ -37,7 +37,7 @@ namespace nlohmann
                 passenger.setFlightHistory(j.at("flight history").get<std::vector<std::string>>());
                 passenger.setNotifications(j.at("notification").get<std::vector<std::string>>());
             }catch(const std::exception &e) {
-                std::cerr<<"Invalid json input data\n";
+                std::cerr<<"Invalid JSON input data\n";
             }
         }
     };

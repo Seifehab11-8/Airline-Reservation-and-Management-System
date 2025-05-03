@@ -23,6 +23,7 @@ class JSONFileManager {
     JSONFileManager(JSONFileManager && other) = default;
     bool append(json jsonObj, int index = -1);
     template<typename type> type read(int index);
+    bool erase(int index);
     int getFileSize();
     File_ptr getFstream();
 };
@@ -32,7 +33,7 @@ template <typename type>
 inline type JSONFileManager::read(int index)
 {
     if(index < jsonArray.size()) {
-        return jsonArray.at(index);
+        return jsonArray.at(index).get<type>();
     }
     return type();
 }

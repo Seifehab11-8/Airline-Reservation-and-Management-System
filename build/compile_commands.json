@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/Date.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/Date.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/functional_testing/dateTest.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/functional_testing/dateTest.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o"
+}
+]

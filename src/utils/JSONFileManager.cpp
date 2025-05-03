@@ -9,7 +9,8 @@ JSONFileManager::JSONFileManager(std::string path)
     }
     try{
         if(file_mPtr->getFileSize() > 2) {
-            jsonArray = json::parse(*(file_mPtr->getFstream().get()));
+            jsonArray = json::array();
+            jsonArray = json::parse(*(file_mPtr->getFstream()));
         }
         else {
             jsonArray = json::array();
@@ -30,12 +31,22 @@ bool JSONFileManager::append(json jsonObj, int index)
         auto it = jsonArray.begin() + index;
         jsonArray.insert(it , jsonObj);
     }
-    std::cout<<jsonArray.dump(4);
+    
     bool store_flag = file_mPtr->append(jsonArray.dump(4),0, true);
     
     return store_flag;
 }
 
+bool JSONFileManager::erase(int index)
+{
+    if(index < jsonArray.size()) {
+        jsonArray.erase(index);
+        file_mPtr->append(jsonArray.dump(4),0, true);
+        return true;
+    }
+    return false;
+}
 int JSONFileManager::getFileSize() {
+
     return file_mPtr->getFileSize();
 }

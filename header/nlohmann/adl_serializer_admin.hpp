@@ -15,11 +15,11 @@ namespace nlohmann
                 {"username", admin.getUsername()},
                 {"password", admin.getPassword()},
                 {"role", admin.getRole()},
-                {"login state", admin.getLoginStatus()},
+                {"login status", admin.getLoginStatus()},
             };
         }
 
-        static void from_json(json &j, Administrator &admin)
+        static void from_json(const json &j, Administrator &admin)
         {
             try{
                 admin.setName(j.at("name").get<std::string>());

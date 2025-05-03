@@ -15,11 +15,11 @@ namespace nlohmann
                 {"username", bookingAgent.getUsername()},
                 {"password", bookingAgent.getPassword()},
                 {"role", bookingAgent.getRole()},
-                {"login state", bookingAgent.getLoginStatus()},
+                {"login status", bookingAgent.getLoginStatus()},
             };
         }
 
-        static void from_json(json &j, BookingAgent &bookingAgent)
+        static void from_json(const json &j, BookingAgent &bookingAgent)
         {
             try{
                 bookingAgent.setName(j.at("name").get<std::string>());

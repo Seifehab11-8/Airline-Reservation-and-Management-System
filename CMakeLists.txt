@@ -31,8 +31,10 @@ set(SOURCES
     # src/utils/exceptions/Undefined_role_exception.cpp
     # src/utils/IOStreamHelper.cpp
     # src/APP.cpp
-    src/utils/FileManager.cpp
-    functional_testing/fileManagerTest001.cpp
+    # src/utils/FileManager.cpp
+    # functional_testing/fileManagerTest001.cpp
+    src/utils/Date.cpp
+    functional_testing/dateTest.cpp
 )
 
 set(HEADERS
@@ -47,7 +49,8 @@ set(HEADERS
     # header/utils/exceptions/Undefined_role_exception.hpp
     # header/utils/IOStreamHelper.hpp
     # header/APP.hpp
-    header/utils/FileManager.hpp
+    # header/utils/FileManager.hpp
+    header/utils/Date.hpp
 )
 
 # Add executable with explicit source files
