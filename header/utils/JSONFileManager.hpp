@@ -2,7 +2,7 @@
 #define _JSON_FILE_MANAGER_HPP
 #include "FileManager.hpp"
 #include <string>
-#include <deque>
+#include <vector>
 #include "../nlohmann/json.hpp"
 #include "../nlohmann/adl_serializer_admin.hpp"
 #include "../nlohmann/adl_serializer_aircraft.hpp"
@@ -23,12 +23,14 @@ class JSONFileManager {
     JSONFileManager(JSONFileManager && other) = default;
     bool append(json jsonObj, int index = -1);
     template<typename type> type read(int index);
+    template<typename type> const std::vector<type>& getArray();
     bool erase(int index);
     int getFileSize();
     File_ptr getFstream();
 };
 #endif // !1
 
+using Json_file_ptr = std::shared_ptr<JSONFileManager>;
 template <typename type>
 inline type JSONFileManager::read(int index)
 {
@@ -36,4 +38,10 @@ inline type JSONFileManager::read(int index)
         return jsonArray.at(index).get<type>();
     }
     return type();
+}
+
+template <typename type>
+inline const std::vector<type>& JSONFileManager::getArray()
+{
+    return jsonArray.get<std::vector<type>>();
 }
