@@ -76,5 +76,5 @@ This project is licensed under the MIT License.
 
 ---
 
-**Author:** [Your Name]  
-**Contact:** [your.email@example.com]
+**Author:** Seifalla Ehab   
+**Contact:** semaziz2003@gmail.com
