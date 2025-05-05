@@ -8,17 +8,15 @@ FlightManager::FlightManager()
 
 void FlightManager:: create() 
 {
-    const std::vector<Flight>& flightArray = file_access_ptr->getArray<Flight>();
     FLightPtr f_ptr;
     std::cout<<"--- Add New Flight ---"<<std::endl;
     std::cin>>*(f_ptr);
-    for(auto &flight: flightArray) {
-        if(flight.getFlightNumber() == f_ptr->getFlightNumber()) {
-            std::cout<<"Flight ID duplication your flight must have a unique ID"
+    if(exist<Flight>(*f_ptr) != -1) {
+        std::cout<<"Flight ID duplication your flight must have a unique ID"
                         <<std::endl;
-            return;
-        }
+        return;
     }
+
     file_access_ptr->append(*(f_ptr));
     std::cout<<std::endl;
     std::cout<<"Flight "
@@ -36,5 +34,4 @@ void FlightManager:: _delete()
 }
 void FlightManager:: view()
 {
-    
-} 
+}

@@ -14,5 +14,22 @@ class IManager {
     virtual void update() = 0;
     virtual void _delete() = 0;
     virtual void view() = 0;
+    template<typename type> 
+    int exist(const type& element);
 };
+
+template <typename type>
+inline int IManager::exist(const type &element)
+{
+    std::vector<type>& listOfElements = file_access_ptr->getArray();
+    int counter = 0;
+    for(const auto& it: listOfElements) {
+        if(it == element) {
+            return counter;
+        }
+        counter++;
+    }
+    return -1;
+}
+
 #endif

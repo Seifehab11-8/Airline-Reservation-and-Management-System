@@ -42,6 +42,7 @@ class Flight {
     void setAircraftType(const std::string& aircraftType);
     void setNumOfSeats(int numOfSeats);
     void setStatus(const std::string& status);
+    bool operator == (const Flight& other);
 };
 std::ostream& operator<<(std::ostream& os, const Flight& flight);
 std::istream& operator>>(std::istream &is, Flight& flight);
