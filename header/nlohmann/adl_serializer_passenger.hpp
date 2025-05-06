@@ -27,7 +27,7 @@ namespace nlohmann
         {
             try{
                 passenger.setName(j.at("name").get<std::string>());
-                passenger.setID(j.at("id").get<int>());
+                passenger.setID(j.at("id").get<std::string>());
                 passenger.setUsername(j.at("username").get<std::string>());
                 passenger.setPassword(j.at("password").get<std::string>());
                 passenger.setRole(j.at("role").get<std::string>());

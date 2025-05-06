@@ -5,7 +5,7 @@ void Person::setName(std::string name)
 {
     this->name = name;
 }
-void Person::setID(int id)
+void Person::setID(std::string id)
 {
     this->id =id;
 }
@@ -20,7 +20,7 @@ std::string Person::getName() const
     return name;
 }
 
-int Person::getID() const
+std::string Person::getID() const
 {
     return id;
 }

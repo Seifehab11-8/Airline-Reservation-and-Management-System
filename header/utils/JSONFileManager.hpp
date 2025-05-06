@@ -25,6 +25,7 @@ class JSONFileManager {
     template<typename type> type read(int index);
     template<typename type> const std::vector<type>& getArray();
     bool erase(int index);
+    template <typename type> bool update(int index, const type& new_version);
     int getFileSize();
     File_ptr getFstream();
 };
@@ -44,4 +45,14 @@ template <typename type>
 inline const std::vector<type>& JSONFileManager::getArray()
 {
     return jsonArray.get<std::vector<type>>();
+}
+
+template <typename type>
+inline bool JSONFileManager::update(int index, const type &new_version)
+{
+    if(index < jsonArray.size()) {
+        jsonArray.at(index) = new_version;
+        return true;
+    }
+    return false;
 }

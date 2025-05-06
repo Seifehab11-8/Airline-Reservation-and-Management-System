@@ -23,7 +23,7 @@ namespace nlohmann
         {
             try{
                 bookingAgent.setName(j.at("name").get<std::string>());
-                bookingAgent.setID(j.at("id").get<int>());
+                bookingAgent.setID(j.at("id").get<std::string>());
                 bookingAgent.setUsername(j.at("username").get<std::string>());
                 bookingAgent.setPassword(j.at("password").get<std::string>());
                 bookingAgent.setRole(j.at("role").get<std::string>());

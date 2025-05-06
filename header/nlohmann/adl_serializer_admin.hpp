@@ -23,7 +23,7 @@ namespace nlohmann
         {
             try{
                 admin.setName(j.at("name").get<std::string>());
-                admin.setID(j.at("id").get<int>());
+                admin.setID(j.at("id").get<std::string>());
                 admin.setUsername(j.at("username").get<std::string>());
                 admin.setPassword(j.at("password").get<std::string>());
                 admin.setRole(j.at("role").get<std::string>());

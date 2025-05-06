@@ -4,7 +4,7 @@
 class Person {
     protected:
     std::string name;
-    int id;
+    std::string id;
     std::string role;
     public:
     Person() = default;
@@ -12,10 +12,10 @@ class Person {
     Person(Person &&other) = default;
     virtual ~Person() = default;
     void setName(std::string name);
-    void setID(int id);
+    void setID(std::string id);
     void setRole(std::string role);
     std::string getName() const;
-    int getID() const;
+    std::string getID() const;
     std::string getRole() const;
 };
 

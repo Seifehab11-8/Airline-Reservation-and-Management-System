@@ -3,6 +3,8 @@
 #include <string>
 #include "../utils/Date.hpp"
 #include "../utils/IOStreamHelper.hpp"
+#include "../person/Pilot.hpp"
+#include "../person/FlightAttendant.hpp"
 
 class Flight {
     private:
@@ -16,6 +18,8 @@ class Flight {
     int numOfAvailableSeats;
     std::string status;
     double price;
+    FAPtr fa_ptr;
+    PilotPtr pl_ptr;
     friend std::ostream& operator<<(std::ostream& os, const Flight& flight);
     friend std::istream& operator>>(std::istream &is, Flight& flight);
     public:
@@ -32,16 +36,20 @@ class Flight {
     double getPrice() const;
     std::string getStatus() const;
     int getNumOfAvailableSeats() const;
+    FAPtr getFlighAttendant() const;
+    PilotPtr getPilot() const;
     void setPrice(double price);
     void setNumOfAvailableSeats(int numOfAvailableSeats);
     void setFlightNumber(const std::string& flightNumber);
     void setOrigin(const std::string& origin);
     void setDestination(const std::string& destination);
-    void setDeptTime(const DatePtr& deptTime);
-    void setArrivalTime(const DatePtr& arrivalTime);
+    void setDeptTime(const DatePtr deptTime);
+    void setArrivalTime(const DatePtr arrivalTime);
     void setAircraftType(const std::string& aircraftType);
     void setNumOfSeats(int numOfSeats);
     void setStatus(const std::string& status);
+    void setFlightAttendant(const FAPtr fa_ptr);
+    void setPilot(const PilotPtr pl_ptr);
     bool operator == (const Flight& other);
 };
 std::ostream& operator<<(std::ostream& os, const Flight& flight);
