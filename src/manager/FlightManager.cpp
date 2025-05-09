@@ -17,7 +17,7 @@ void FlightManager:: create()
     std::cin.ignore();
     std::cout<<"--- Add New Flight ---"<<std::endl;
     std::cin>>*(f_ptr);
-    if(exist<Flight>(*f_ptr) != -1) {
+    if(exist<Flight>(*f_ptr, file_access_ptr) != -1) {
         std::cout<<"Flight ID duplication your flight must have a unique ID"
                         <<std::endl;
         return;
@@ -40,7 +40,7 @@ void FlightManager:: update()
     std::getline(std::cin, flight_id);
     flightPtr = std::make_shared<Flight>();
     flightPtr->setFlightNumber(flight_id);
-    const int index = exist<Flight>(*flightPtr);
+    const int index = exist<Flight>(*flightPtr, file_access_ptr);
     if(index != -1) {
         int option = 0;
         flightPtr = std::make_shared<Flight>(file_access_ptr->read<Flight>(index));
@@ -82,7 +82,7 @@ void FlightManager:: _delete()
     std::getline(std::cin, flight_id);
     FLightPtr flightPtr = std::make_shared<Flight>();
     flightPtr->setFlightNumber(flight_id);
-    const int index = exist<Flight>(*flightPtr);
+    const int index = exist<Flight>(*flightPtr, file_access_ptr);
     if(index != -1) {
         file_access_ptr->erase(index);
         std::cout<<"Flight "
@@ -143,7 +143,7 @@ void FlightManager::editFlightDetails(FLightPtr flightPtr)
             std::getline(std::cin, flightNumber);
             std::string currentFlightNumber = flightPtr->getFlightNumber();
             flightPtr->setFlightNumber(flightNumber);
-            if(exist<Flight>(*flightPtr) != -1) {
+            if(exist<Flight>(*flightPtr, file_access_ptr) != -1) {
                 std::cout<<"Flight ID duplication your flight must have a unique ID"
                         <<std::endl;
                 flightPtr->setFlightNumber(currentFlightNumber);
@@ -215,11 +215,11 @@ void FlightManager::editCrewAssignment(FLightPtr flightPtr)
     std::string pilot_id;
     std::cin.ignore();
     std::getline(std::cin, pilot_id);
-    PilotPtr pilotPtr = std::make_shared<Pilot>();
+    auto pilotPtr = std::make_shared<CrewAttendant>();
     pilotPtr->setID(pilot_id);
     //echo for debug purposes
     std::cout<<"Pilot ID: "<<pilotPtr->getID()<<std::endl;
-    int pilotIndex = exist<CrewAttendant>(*pilotPtr);
+    int pilotIndex = exist<CrewAttendant>(*pilotPtr, crew_file_access_ptr);
     if(pilotIndex != -1) {
         auto it = std::make_shared<CrewAttendant>(crewList.at(pilotIndex));
         auto pilot = std::dynamic_pointer_cast<Pilot>(it);
@@ -240,9 +240,9 @@ void FlightManager::editCrewAssignment(FLightPtr flightPtr)
     std::cout<<"Select Flight Attendant by ID: ";
     std::string fa_id;
     std::getline(std::cin, fa_id);
-    FAPtr flightAttendantPtr = std::make_shared<FlightAttendant>();
+    auto flightAttendantPtr = std::make_shared<FlightAttendant>();
     flightAttendantPtr->setID(fa_id);
-    int flightAttendantIndex = exist<CrewAttendant>(*flightAttendantPtr);
+    int flightAttendantIndex = exist<CrewAttendant>(*flightAttendantPtr, crew_file_access_ptr);
     if(flightAttendantIndex != -1) {
         auto it = std::make_shared<CrewAttendant>(crewList.at(flightAttendantIndex));
         auto flightAttendant = std::dynamic_pointer_cast<FlightAttendant>(it);
