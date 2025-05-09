@@ -1,3 +1,0 @@
-/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles/AirlineAPP.dir
-/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles/edit_cache.dir
-/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles/rebuild_cache.dir
