@@ -77,13 +77,29 @@ void FlightManager:: _delete()
 {
     std::string flight_id;
     std::cin.ignore();
-    std::cout<<"--- Delete Flight ---"
+    std::cout<<"--- Delete Flight ---\n"
                 <<"Enter Flight Number to Delete eg.(AAxxx): ";
     std::getline(std::cin, flight_id);
     FLightPtr flightPtr = std::make_shared<Flight>();
     flightPtr->setFlightNumber(flight_id);
     const int index = exist<Flight>(*flightPtr, file_access_ptr);
+
     if(index != -1) {
+        flightPtr = std::make_shared<Flight>(file_access_ptr->read<Flight>(index));
+        auto pilot_index = exist<CrewAttendant>(*flightPtr->getPilot(), crew_file_access_ptr);
+        if(pilot_index != -1) {
+            auto it = std::make_shared<CrewAttendant>(crew_file_access_ptr->read<CrewAttendant>(pilot_index));
+            auto pilot = std::dynamic_pointer_cast<Pilot>(it);
+            pilot->setOccupation(false);
+            crew_file_access_ptr->update(pilot_index, *it);
+        }
+        auto flight_attendant_index = exist<CrewAttendant>(*flightPtr->getFlighAttendant(), crew_file_access_ptr);
+        if(flight_attendant_index != -1) {
+            auto it = std::make_shared<CrewAttendant>(crew_file_access_ptr->read<CrewAttendant>(flight_attendant_index));
+            auto flight_attendant = std::dynamic_pointer_cast<FlightAttendant>(it);
+            flight_attendant->setOccupation(false);
+            crew_file_access_ptr->update(flight_attendant_index, *it);
+        }
         file_access_ptr->erase(index);
         std::cout<<"Flight "
                 <<flightPtr->getFlightNumber()
@@ -203,6 +219,7 @@ void FlightManager::editFlightDetails(FLightPtr flightPtr)
 
 void FlightManager::editCrewAssignment(FLightPtr flightPtr)
 {
+    //! Working Section
     std::vector<CrewAttendant> crewList = crew_file_access_ptr->getArray<CrewAttendant>();
     std::cout<<"--- Crew Assignment ---"<<std::endl;
     std::cout<<"Available Pilots:\n";
@@ -211,18 +228,21 @@ void FlightManager::editCrewAssignment(FLightPtr flightPtr)
             std::cout<<static_cast<const Pilot&>(it)<<std::endl;
         }
     }
+    //! End Working Section
     std::cout<<"Select Pilot by ID: ";
     std::string pilot_id;
     std::cin.ignore();
     std::getline(std::cin, pilot_id);
     auto pilotPtr = std::make_shared<CrewAttendant>();
     pilotPtr->setID(pilot_id);
-    //echo for debug purposes
-    std::cout<<"Pilot ID: "<<pilotPtr->getID()<<std::endl;
     int pilotIndex = exist<CrewAttendant>(*pilotPtr, crew_file_access_ptr);
     if(pilotIndex != -1) {
         auto it = std::make_shared<CrewAttendant>(crewList.at(pilotIndex));
         auto pilot = std::dynamic_pointer_cast<Pilot>(it);
+        if(crewList.at(pilotIndex).getOccupation() == true) {
+            std::cout<<"Pilot is already assigned to another flight\n";
+            return;
+        }
         flightPtr->setPilot(pilot);
         crewList.at(pilotIndex).setOccupation(true);
         crew_file_access_ptr->update(pilotIndex, crewList.at(pilotIndex));
@@ -240,12 +260,16 @@ void FlightManager::editCrewAssignment(FLightPtr flightPtr)
     std::cout<<"Select Flight Attendant by ID: ";
     std::string fa_id;
     std::getline(std::cin, fa_id);
-    auto flightAttendantPtr = std::make_shared<FlightAttendant>();
+    auto flightAttendantPtr = std::make_shared<CrewAttendant>();
     flightAttendantPtr->setID(fa_id);
     int flightAttendantIndex = exist<CrewAttendant>(*flightAttendantPtr, crew_file_access_ptr);
     if(flightAttendantIndex != -1) {
         auto it = std::make_shared<CrewAttendant>(crewList.at(flightAttendantIndex));
         auto flightAttendant = std::dynamic_pointer_cast<FlightAttendant>(it);
+        if(crewList.at(flightAttendantIndex).getOccupation() == true) {
+            std::cout<<"Flight Attendant is already assigned to another flight\n";
+            return;
+        }
         flightPtr->setFlightAttendant(flightAttendant);
         crewList.at(flightAttendantIndex).setOccupation(true);
         crew_file_access_ptr->update(flightAttendantIndex, crewList.at(flightAttendantIndex));

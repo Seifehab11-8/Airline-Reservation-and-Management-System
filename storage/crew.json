@@ -7,24 +7,24 @@
         "role": "Pilot"
     },
     {
-        "flying hours": 8500,
+        "flying hours": 8500.0,
         "id": "P002",
         "name": "Emily Johnson",
-        "occupation": false,
+        "occupation": true,
         "role": "Pilot"
     },
     {
-        "flying hours": 3200,
+        "flying hours": 3200.0,
         "id": "FA001",
         "name": "Alice Brown",
-        "occupation": false,
+        "occupation": true,
         "role": "Flight Attendant"
     },
     {
-        "flying hours": 4100,
+        "flying hours": 4100.0,
         "id": "FA002",
         "name": "David Lee",
-        "occupation": false,
+        "occupation": true,
         "role": "Flight Attendant"
     }
 ]

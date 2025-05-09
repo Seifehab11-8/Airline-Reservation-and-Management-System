@@ -37,6 +37,9 @@ void Administrator::viewMainMenu()
                         case 4:
                             flightManagerPtr->view();
                             break;
+                        case 5:
+                            std::cout<<"Returning to Main Menu...\n";
+                            break;
                         default:
                             std::cout<<"Invalid choice. Please try again.\n";
                     }

@@ -18,8 +18,8 @@ class Flight {
     int numOfAvailableSeats;
     std::string status;
     double price;
-    FAPtr fa_ptr;
-    PilotPtr pl_ptr;
+    FAPtr fa_ptr = std::make_shared<FlightAttendant>();
+    PilotPtr pl_ptr = std::make_shared<Pilot>();
     friend std::ostream& operator<<(std::ostream& os, const Flight& flight);
     friend std::istream& operator>>(std::istream &is, Flight& flight);
     public:

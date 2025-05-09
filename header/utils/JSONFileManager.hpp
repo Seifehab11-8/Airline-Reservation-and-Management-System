@@ -59,8 +59,8 @@ inline std::vector<type> JSONFileManager::getArray()
 template <typename type>
 inline bool JSONFileManager::update(int index, const type &new_version)
 {
-    if(index < jsonArray.size()) {
-        jsonArray.at(index) = json(new_version);
+    if(index < static_cast<int>(jsonArray.size())) { // Fix signed/unsigned mismatch
+        jsonArray.at(index) = json(new_version);     // Serialize new_version to JSON
         file_mPtr->append(jsonArray.dump(4),0, true);
         return true;
     }

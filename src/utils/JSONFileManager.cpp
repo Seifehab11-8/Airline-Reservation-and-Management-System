@@ -15,8 +15,6 @@ JSONFileManager::JSONFileManager(std::string path)
         else {
             jsonArray = json::array();
         }
-        file_mPtr->getFstream()->close();
-        file_mPtr->getFstream()->open(path, OVERWRITE);
     }
     catch(const std::exception &e){
         std::cerr<<e.what()<<std::endl;

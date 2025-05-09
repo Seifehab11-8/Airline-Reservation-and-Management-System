@@ -107,10 +107,10 @@ std::ostream& operator<<(std::ostream& os, const Flight& flight)
     << "Available Seats: " << flight.numOfAvailableSeats<< "\n"
     << "Price: " << flight.price << "\n";
     if(flight.fa_ptr != nullptr) {
-        os << "Flight Attendant: " << *(flight.fa_ptr) << "\n";
+        os << "Flight Attendant: " << flight.fa_ptr->getID() << "\n";
     }
     if(flight.pl_ptr != nullptr) {
-        os << "Pilot: " << *(flight.pl_ptr) << "\n";
+        os << "Pilot: " << flight.pl_ptr->getID() << "\n";
     }
     os << "Status: " << flight.status << "\n";
     return os;
