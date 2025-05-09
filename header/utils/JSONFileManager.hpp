@@ -8,6 +8,7 @@
 #include "../nlohmann/adl_serializer_aircraft.hpp"
 #include "../nlohmann/adl_serializer_bookingAgent.hpp"
 #include "../nlohmann/adl_serializer_flight.hpp"
+#include "../nlohmann/adl_serializer_crewAttendant.hpp"
 #include "../nlohmann/adl_serializer_passenger.hpp"
 
 using File_mPtr = std::shared_ptr<FileManager>;
@@ -23,13 +24,13 @@ class JSONFileManager {
     JSONFileManager(JSONFileManager && other) = default;
     bool append(json jsonObj, int index = -1);
     template<typename type> type read(int index);
-    template<typename type> const std::vector<type>& getArray();
+    template<typename type> std::vector<type> getArray();
     bool erase(int index);
     template <typename type> bool update(int index, const type& new_version);
     int getFileSize();
     File_ptr getFstream();
 };
-#endif // !1
+
 
 using Json_file_ptr = std::shared_ptr<JSONFileManager>;
 template <typename type>
@@ -42,17 +43,24 @@ inline type JSONFileManager::read(int index)
 }
 
 template <typename type>
-inline const std::vector<type>& JSONFileManager::getArray()
+inline std::vector<type> JSONFileManager::getArray()
 {
-    return jsonArray.get<std::vector<type>>();
+    std::vector<type> result;
+    for (const auto& item : jsonArray) {
+        result.push_back(item.get<type>());
+    }
+    return result;
 }
 
 template <typename type>
 inline bool JSONFileManager::update(int index, const type &new_version)
 {
     if(index < jsonArray.size()) {
-        jsonArray.at(index) = new_version;
+        jsonArray.at(index) = json(new_version);
+        file_mPtr->append(jsonArray.dump(4),0, true);
         return true;
     }
     return false;
 }
+
+#endif // !1

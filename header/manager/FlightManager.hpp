@@ -2,14 +2,12 @@
 #define _FLIGHT_MANAGER_HPP
 
 #include "../manager/IManager.hpp"
-#include "../flight/Flight.hpp"
-#include "../nlohmann/adl_serializer_flight.hpp"
-#include "../nlohmann/adl_serializer_crewAttendant.hpp"
 #include <iostream>
 #include <string>
 
-constexpr const char* FLIGHT_FILE_PATH = "../storage/flights001.json";
-constexpr const char* FLIGHT_CREW_FILE_PATH = "../storage/crew.json";
+class Flight;
+constexpr const char* FLIGHT_FILE_PATH = "../../../storage/flights001.json";
+constexpr const char* FLIGHT_CREW_FILE_PATH = "../../../storage/crew.json";
 class FlightManager : public IManager{
     private:
     Json_file_ptr crew_file_access_ptr;

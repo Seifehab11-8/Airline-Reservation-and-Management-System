@@ -50,7 +50,7 @@ class Flight {
     void setStatus(const std::string& status);
     void setFlightAttendant(const FAPtr fa_ptr);
     void setPilot(const PilotPtr pl_ptr);
-    bool operator == (const Flight& other);
+    bool operator == (const Flight& other) const;
 };
 std::ostream& operator<<(std::ostream& os, const Flight& flight);
 std::istream& operator>>(std::istream &is, Flight& flight);

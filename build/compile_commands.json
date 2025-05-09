@@ -1,14 +1,110 @@
 [
 {
   "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/main.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/main.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/main.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Person.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Person.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/User.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/User.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/BookingAgent.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/BookingAgent.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Administrator.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Administrator.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Passenger.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Passenger.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/factory/ConcreteUserFactory.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/factory/ConcreteUserFactory.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/exceptions/Undefined_role_exception.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/exceptions/Undefined_role_exception.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/IOStreamHelper.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/IOStreamHelper.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/APP.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/APP.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/APP.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/APP.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/FileManager.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/FileManager.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
   "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/Date.cpp",
   "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/Date.cpp",
   "output": "CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o"
 },
 {
   "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
-  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/functional_testing/dateTest.cpp",
-  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/functional_testing/dateTest.cpp",
-  "output": "CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o"
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/manager/FlightManager.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/manager/FlightManager.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/flight/Flight.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/flight/Flight.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/CrewAttendant.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/CrewAttendant.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/FlightAttendant.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/FlightAttendant.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Pilot.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Pilot.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o"
+},
+{
+  "directory": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build",
+  "command": "/usr/bin/clang++   -g -std=c++17 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -o CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/JSONFileManager.cpp",
+  "file": "/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/JSONFileManager.cpp",
+  "output": "CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o"
 }
 ]

@@ -69,10 +69,164 @@ include CMakeFiles/AirlineAPP.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AirlineAPP.dir/flags.make
 
+CMakeFiles/AirlineAPP.dir/src/main.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/main.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/main.cpp
+CMakeFiles/AirlineAPP.dir/src/main.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AirlineAPP.dir/src/main.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/main.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/main.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/main.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/main.cpp
+
+CMakeFiles/AirlineAPP.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/main.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/main.cpp > CMakeFiles/AirlineAPP.dir/src/main.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/main.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/main.cpp -o CMakeFiles/AirlineAPP.dir/src/main.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Person.cpp
+CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Person.cpp
+
+CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Person.cpp > CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Person.cpp -o CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/User.cpp
+CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/User.cpp
+
+CMakeFiles/AirlineAPP.dir/src/person/User.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/person/User.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/User.cpp > CMakeFiles/AirlineAPP.dir/src/person/User.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/person/User.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/person/User.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/User.cpp -o CMakeFiles/AirlineAPP.dir/src/person/User.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/BookingAgent.cpp
+CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/BookingAgent.cpp
+
+CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/BookingAgent.cpp > CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/BookingAgent.cpp -o CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Administrator.cpp
+CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Administrator.cpp
+
+CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Administrator.cpp > CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Administrator.cpp -o CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Passenger.cpp
+CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Passenger.cpp
+
+CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Passenger.cpp > CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Passenger.cpp -o CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/factory/ConcreteUserFactory.cpp
+CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/factory/ConcreteUserFactory.cpp
+
+CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/factory/ConcreteUserFactory.cpp > CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/factory/ConcreteUserFactory.cpp -o CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/exceptions/Undefined_role_exception.cpp
+CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/exceptions/Undefined_role_exception.cpp
+
+CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/exceptions/Undefined_role_exception.cpp > CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/exceptions/Undefined_role_exception.cpp -o CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/IOStreamHelper.cpp
+CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/IOStreamHelper.cpp
+
+CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/IOStreamHelper.cpp > CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/IOStreamHelper.cpp -o CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/APP.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/APP.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/APP.cpp
+CMakeFiles/AirlineAPP.dir/src/APP.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AirlineAPP.dir/src/APP.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/APP.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/APP.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/APP.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/APP.cpp
+
+CMakeFiles/AirlineAPP.dir/src/APP.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/APP.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/APP.cpp > CMakeFiles/AirlineAPP.dir/src/APP.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/APP.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/APP.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/APP.cpp -o CMakeFiles/AirlineAPP.dir/src/APP.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/FileManager.cpp
+CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/FileManager.cpp
+
+CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/FileManager.cpp > CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/FileManager.cpp -o CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.s
+
 CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
 CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/Date.cpp
 CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/Date.cpp
 
 CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.i: cmake_force
@@ -83,33 +237,135 @@ CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/Date.cpp -o CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.s
 
-CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
-CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/functional_testing/dateTest.cpp
-CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o -MF CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o.d -o CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/functional_testing/dateTest.cpp
+CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/manager/FlightManager.cpp
+CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/manager/FlightManager.cpp
 
-CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/functional_testing/dateTest.cpp > CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.i
+CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/manager/FlightManager.cpp > CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.i
 
-CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/functional_testing/dateTest.cpp -o CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.s
+CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/manager/FlightManager.cpp -o CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/flight/Flight.cpp
+CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/flight/Flight.cpp
+
+CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/flight/Flight.cpp > CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/flight/Flight.cpp -o CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/CrewAttendant.cpp
+CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/CrewAttendant.cpp
+
+CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/CrewAttendant.cpp > CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/CrewAttendant.cpp -o CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/FlightAttendant.cpp
+CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/FlightAttendant.cpp
+
+CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/FlightAttendant.cpp > CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/FlightAttendant.cpp -o CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Pilot.cpp
+CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Pilot.cpp
+
+CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Pilot.cpp > CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/person/Pilot.cpp -o CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.s
+
+CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o: CMakeFiles/AirlineAPP.dir/flags.make
+CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o: /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/JSONFileManager.cpp
+CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o: CMakeFiles/AirlineAPP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o -MF CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o.d -o CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o -c /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/JSONFileManager.cpp
+
+CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/JSONFileManager.cpp > CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.i
+
+CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/src/utils/JSONFileManager.cpp -o CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.s
 
 # Object files for target AirlineAPP
 AirlineAPP_OBJECTS = \
+"CMakeFiles/AirlineAPP.dir/src/main.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/APP.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o" \
 "CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o" \
-"CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o"
+"CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o" \
+"CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o"
 
 # External object files for target AirlineAPP
 AirlineAPP_EXTERNAL_OBJECTS =
 
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/main.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/APP.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o
 bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.o
-bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o
+bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o
 bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/build.make
 bin/Debug/AirlineAPP: CMakeFiles/AirlineAPP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/Debug/AirlineAPP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/seifehab/Documents/GitHub/Airline-Reservation-and-Management-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable bin/Debug/AirlineAPP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AirlineAPP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

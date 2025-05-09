@@ -8,7 +8,7 @@ class Pilot : public CrewAttendant {
     friend std::istream& operator >> (std::istream & is, Pilot& pilot);
     friend std::ostream& operator <<(std::ostream & os, const Pilot& pilot);   
     public:
-    Pilot() = default;
+    Pilot();
     Pilot(const Pilot & other) = default;
     Pilot(Pilot && other) = default;
 };

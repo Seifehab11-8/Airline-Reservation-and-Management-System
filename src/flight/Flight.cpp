@@ -117,7 +117,6 @@ std::ostream& operator<<(std::ostream& os, const Flight& flight)
 }
 std::istream &operator>>(std::istream &is, Flight &flight)
 {
-    is.ignore();//to free the buffer
     std::cout<<"Enter Flight Number: ";
     std::getline(is, flight.flightNumber);
     std::cout<<"Enter Origin: ";
@@ -130,13 +129,21 @@ std::istream &operator>>(std::istream &is, Flight &flight)
     std::cout<<"Enter Arrival Date and Time (YYYY-MM-DD HH:MM): ";
     flight.arrivalTime = std::make_shared<Date>();
     is>>*(flight.arrivalTime);
+    is.ignore();
     std::cout<<"Enter Aircraft Type: ";
     std::getline(is, flight.aircraftType);
     std::cout<<"Enter Total Seats: ";
     flight.numOfAvailableSeats = IOStreamHelper::InputNumeric();
+    is.ignore();
     std::cout<<"Enter Status (Scheduled/Delayed/Canceled): ";
     std::getline(is, flight.status);
     std::cout<<"Enter Flight Price: ";
     is>>flight.price;
+    return is;
+}
+
+bool Flight::operator==(const Flight &other) const
+{
+    return flightNumber == other.flightNumber;
 }
 

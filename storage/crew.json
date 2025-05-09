@@ -1,0 +1,30 @@
+[
+    {
+      "name": "John Smith",
+      "id": "P001",
+      "flying hours": 12000,
+      "role": "Pilot",
+      "occupation": false
+    },
+    {
+      "name": "Emily Johnson",
+      "id": "P002",
+      "flying hours": 8500,
+      "role": "Pilot",
+      "occupation": false
+    },
+    {
+      "name": "Alice Brown",
+      "id": "FA001",
+      "flying hours": 3200,
+      "role": "Flight Attendant",
+      "occupation": false
+    },
+    {
+      "name": "David Lee",
+      "id": "FA002",
+      "flying hours": 4100,
+      "role": "Flight Attendant",
+      "occupation": false
+    }
+  ]

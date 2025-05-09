@@ -7,10 +7,14 @@ std::istream& operator >> (std::istream & is, FlightAttendant& attendant){
     std::getline(is, attendant.name);
     std::cout<<"Enter Attendant's ID eg.(FAxxx): ";
     std::getline(is,attendant.id);
+    return is;
 }
 std::ostream& operator <<(std::ostream & os, const FlightAttendant& attendant){
     std::cout<<attendant.id
                 <<" - "
-                <<attendant.name
-                <<std::endl;
+                <<attendant.name;
+    return os;
+}
+FlightAttendant::FlightAttendant() : CrewAttendant() {
+    this->role = "Flight Attendant";
 }

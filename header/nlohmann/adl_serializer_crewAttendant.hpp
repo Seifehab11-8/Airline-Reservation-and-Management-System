@@ -1,3 +1,4 @@
+#pragma once
 #include "json.hpp"
 
 #include "../person/Pilot.hpp"
@@ -7,7 +8,7 @@
 namespace nlohmann 
 {
     template<>
-    struct adl_serializer<Pilot>
+    struct adl_serializer<CrewAttendant>
     {
         static void to_json(json &j, const CrewAttendant &crewAttendant)
         {
@@ -15,7 +16,8 @@ namespace nlohmann
                 {"name", crewAttendant.getName()},
                 {"id", crewAttendant.getID()},
                 {"flying hours", crewAttendant.getFlyingHours()},
-                {"role", "Pilot"}
+                {"role", crewAttendant.getRole()},
+                {"occupation", crewAttendant.getOccupation()}
             };
         }
 
@@ -25,33 +27,8 @@ namespace nlohmann
                 crewAttendant.setName(j.at("name").get<std::string>());
                 crewAttendant.setID(j.at("id").get<std::string>());
                 crewAttendant.setFlyingHours(j.at("flying hours").get<double>());
-                crewAttendant.setRole("Pilot");
-            }catch(const std::exception &e) {
-                std::cerr<<"Invalid json input data\n";
-            }
-        }
-    };
-
-    template<>
-    struct adl_serializer<FlightAttendant>
-    {
-        static void to_json(json &j, const CrewAttendant &crewAttendant)
-        {
-            j = json {
-                {"name", crewAttendant.getName()},
-                {"id", crewAttendant.getID()},
-                {"flying hours", crewAttendant.getFlyingHours()},
-                {"role", "Flight Attendant"}
-            };
-        }
-
-        static void from_json(const json &j, CrewAttendant &crewAttendant)
-        {
-            try{
-                crewAttendant.setName(j.at("name").get<std::string>());
-                crewAttendant.setID(j.at("id").get<std::string>());
-                crewAttendant.setFlyingHours(j.at("flying hours").get<double>());
-                crewAttendant.setRole("Flight Attendant");
+                crewAttendant.setRole(j.at("role").get<std::string>());
+                crewAttendant.setOccupation(j.at("occupation").get<bool>());
             }catch(const std::exception &e) {
                 std::cerr<<"Invalid json input data\n";
             }

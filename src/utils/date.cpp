@@ -2,7 +2,7 @@
 #include <format>
 std::ostream& operator <<(std::ostream& os, const Date & date)
 {
-    os<<date.year<<"-"<<date.month<<"-"<<date.day<<" "<<date.hour<<":"<<date.min<<std::endl;
+    os<<date.year<<"-"<<date.month<<"-"<<date.day<<" "<<date.hour<<":"<<date.min;
     return os;
 }
 std::istream& operator >>(std::istream& is, Date & date)

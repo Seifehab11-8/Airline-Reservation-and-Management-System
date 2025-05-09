@@ -1,7 +1,9 @@
+#pragma once
 #include <stdexcept>
 #include <iostream>
 #include "json.hpp"
 #include "../person/Administrator.hpp"
+
 namespace nlohmann 
 {
     template<>

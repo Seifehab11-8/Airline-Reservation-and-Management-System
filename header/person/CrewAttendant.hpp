@@ -4,6 +4,7 @@
 
 class CrewAttendant : public Person {
     protected:
+    bool occupation = false; // busy or free
     double flyingHours;
     public:
     CrewAttendant() = default;
@@ -11,6 +12,9 @@ class CrewAttendant : public Person {
     CrewAttendant(CrewAttendant && other) = default;
     void setFlyingHours(const double flyingHours);
     double getFlyingHours() const;
+    void setOccupation(const bool occupation);
+    bool getOccupation() const;
+    bool operator == (const CrewAttendant &other) const;
 };
 
 #endif

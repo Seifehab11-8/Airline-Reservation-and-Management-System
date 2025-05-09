@@ -6,11 +6,16 @@ std::istream& operator >> (std::istream & is, Pilot& pilot){
     std::getline(is, pilot.name);
     std::cout<<"Enter Captain's ID eg.(PLxxx): ";
     std::getline(is,pilot.id);
+    return is;
 }
 std::ostream& operator <<(std::ostream & os, const Pilot& pilot){
     std::cout<<"Pilot ID: "
                 <<pilot.id
                 <<" - Captain "
-                <<pilot.name
-                <<std::endl;
+                <<pilot.name;
+    return os;
+}
+
+Pilot::Pilot() : CrewAttendant() {
+    this->role = "Pilot";
 }

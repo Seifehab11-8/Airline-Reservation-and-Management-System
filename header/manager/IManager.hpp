@@ -21,7 +21,7 @@ class IManager {
 template <typename type>
 inline int IManager::exist(const type &element)
 {
-    std::vector<type>& listOfElements = file_access_ptr->getArray();
+    std::vector<type> listOfElements = file_access_ptr->getArray<type>();
     int counter = 0;
     for(const auto& it: listOfElements) {
         if(it == element) {

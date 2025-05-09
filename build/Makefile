@@ -129,29 +129,317 @@ AirlineAPP/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/build
 .PHONY : AirlineAPP/fast
 
-functional_testing/dateTest.o: functional_testing/dateTest.cpp.o
-.PHONY : functional_testing/dateTest.o
+src/APP.o: src/APP.cpp.o
+.PHONY : src/APP.o
 
 # target to build an object file
-functional_testing/dateTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.o
-.PHONY : functional_testing/dateTest.cpp.o
+src/APP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/APP.cpp.o
+.PHONY : src/APP.cpp.o
 
-functional_testing/dateTest.i: functional_testing/dateTest.cpp.i
-.PHONY : functional_testing/dateTest.i
+src/APP.i: src/APP.cpp.i
+.PHONY : src/APP.i
 
 # target to preprocess a source file
-functional_testing/dateTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.i
-.PHONY : functional_testing/dateTest.cpp.i
+src/APP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/APP.cpp.i
+.PHONY : src/APP.cpp.i
 
-functional_testing/dateTest.s: functional_testing/dateTest.cpp.s
-.PHONY : functional_testing/dateTest.s
+src/APP.s: src/APP.cpp.s
+.PHONY : src/APP.s
 
 # target to generate assembly for a file
-functional_testing/dateTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/functional_testing/dateTest.cpp.s
-.PHONY : functional_testing/dateTest.cpp.s
+src/APP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/APP.cpp.s
+.PHONY : src/APP.cpp.s
+
+src/factory/ConcreteUserFactory.o: src/factory/ConcreteUserFactory.cpp.o
+.PHONY : src/factory/ConcreteUserFactory.o
+
+# target to build an object file
+src/factory/ConcreteUserFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.o
+.PHONY : src/factory/ConcreteUserFactory.cpp.o
+
+src/factory/ConcreteUserFactory.i: src/factory/ConcreteUserFactory.cpp.i
+.PHONY : src/factory/ConcreteUserFactory.i
+
+# target to preprocess a source file
+src/factory/ConcreteUserFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.i
+.PHONY : src/factory/ConcreteUserFactory.cpp.i
+
+src/factory/ConcreteUserFactory.s: src/factory/ConcreteUserFactory.cpp.s
+.PHONY : src/factory/ConcreteUserFactory.s
+
+# target to generate assembly for a file
+src/factory/ConcreteUserFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/factory/ConcreteUserFactory.cpp.s
+.PHONY : src/factory/ConcreteUserFactory.cpp.s
+
+src/flight/Flight.o: src/flight/Flight.cpp.o
+.PHONY : src/flight/Flight.o
+
+# target to build an object file
+src/flight/Flight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.o
+.PHONY : src/flight/Flight.cpp.o
+
+src/flight/Flight.i: src/flight/Flight.cpp.i
+.PHONY : src/flight/Flight.i
+
+# target to preprocess a source file
+src/flight/Flight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.i
+.PHONY : src/flight/Flight.cpp.i
+
+src/flight/Flight.s: src/flight/Flight.cpp.s
+.PHONY : src/flight/Flight.s
+
+# target to generate assembly for a file
+src/flight/Flight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/flight/Flight.cpp.s
+.PHONY : src/flight/Flight.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/manager/FlightManager.o: src/manager/FlightManager.cpp.o
+.PHONY : src/manager/FlightManager.o
+
+# target to build an object file
+src/manager/FlightManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.o
+.PHONY : src/manager/FlightManager.cpp.o
+
+src/manager/FlightManager.i: src/manager/FlightManager.cpp.i
+.PHONY : src/manager/FlightManager.i
+
+# target to preprocess a source file
+src/manager/FlightManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.i
+.PHONY : src/manager/FlightManager.cpp.i
+
+src/manager/FlightManager.s: src/manager/FlightManager.cpp.s
+.PHONY : src/manager/FlightManager.s
+
+# target to generate assembly for a file
+src/manager/FlightManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/manager/FlightManager.cpp.s
+.PHONY : src/manager/FlightManager.cpp.s
+
+src/person/Administrator.o: src/person/Administrator.cpp.o
+.PHONY : src/person/Administrator.o
+
+# target to build an object file
+src/person/Administrator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.o
+.PHONY : src/person/Administrator.cpp.o
+
+src/person/Administrator.i: src/person/Administrator.cpp.i
+.PHONY : src/person/Administrator.i
+
+# target to preprocess a source file
+src/person/Administrator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.i
+.PHONY : src/person/Administrator.cpp.i
+
+src/person/Administrator.s: src/person/Administrator.cpp.s
+.PHONY : src/person/Administrator.s
+
+# target to generate assembly for a file
+src/person/Administrator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Administrator.cpp.s
+.PHONY : src/person/Administrator.cpp.s
+
+src/person/BookingAgent.o: src/person/BookingAgent.cpp.o
+.PHONY : src/person/BookingAgent.o
+
+# target to build an object file
+src/person/BookingAgent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.o
+.PHONY : src/person/BookingAgent.cpp.o
+
+src/person/BookingAgent.i: src/person/BookingAgent.cpp.i
+.PHONY : src/person/BookingAgent.i
+
+# target to preprocess a source file
+src/person/BookingAgent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.i
+.PHONY : src/person/BookingAgent.cpp.i
+
+src/person/BookingAgent.s: src/person/BookingAgent.cpp.s
+.PHONY : src/person/BookingAgent.s
+
+# target to generate assembly for a file
+src/person/BookingAgent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/BookingAgent.cpp.s
+.PHONY : src/person/BookingAgent.cpp.s
+
+src/person/CrewAttendant.o: src/person/CrewAttendant.cpp.o
+.PHONY : src/person/CrewAttendant.o
+
+# target to build an object file
+src/person/CrewAttendant.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.o
+.PHONY : src/person/CrewAttendant.cpp.o
+
+src/person/CrewAttendant.i: src/person/CrewAttendant.cpp.i
+.PHONY : src/person/CrewAttendant.i
+
+# target to preprocess a source file
+src/person/CrewAttendant.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.i
+.PHONY : src/person/CrewAttendant.cpp.i
+
+src/person/CrewAttendant.s: src/person/CrewAttendant.cpp.s
+.PHONY : src/person/CrewAttendant.s
+
+# target to generate assembly for a file
+src/person/CrewAttendant.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/CrewAttendant.cpp.s
+.PHONY : src/person/CrewAttendant.cpp.s
+
+src/person/FlightAttendant.o: src/person/FlightAttendant.cpp.o
+.PHONY : src/person/FlightAttendant.o
+
+# target to build an object file
+src/person/FlightAttendant.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.o
+.PHONY : src/person/FlightAttendant.cpp.o
+
+src/person/FlightAttendant.i: src/person/FlightAttendant.cpp.i
+.PHONY : src/person/FlightAttendant.i
+
+# target to preprocess a source file
+src/person/FlightAttendant.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.i
+.PHONY : src/person/FlightAttendant.cpp.i
+
+src/person/FlightAttendant.s: src/person/FlightAttendant.cpp.s
+.PHONY : src/person/FlightAttendant.s
+
+# target to generate assembly for a file
+src/person/FlightAttendant.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/FlightAttendant.cpp.s
+.PHONY : src/person/FlightAttendant.cpp.s
+
+src/person/Passenger.o: src/person/Passenger.cpp.o
+.PHONY : src/person/Passenger.o
+
+# target to build an object file
+src/person/Passenger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.o
+.PHONY : src/person/Passenger.cpp.o
+
+src/person/Passenger.i: src/person/Passenger.cpp.i
+.PHONY : src/person/Passenger.i
+
+# target to preprocess a source file
+src/person/Passenger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.i
+.PHONY : src/person/Passenger.cpp.i
+
+src/person/Passenger.s: src/person/Passenger.cpp.s
+.PHONY : src/person/Passenger.s
+
+# target to generate assembly for a file
+src/person/Passenger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Passenger.cpp.s
+.PHONY : src/person/Passenger.cpp.s
+
+src/person/Person.o: src/person/Person.cpp.o
+.PHONY : src/person/Person.o
+
+# target to build an object file
+src/person/Person.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.o
+.PHONY : src/person/Person.cpp.o
+
+src/person/Person.i: src/person/Person.cpp.i
+.PHONY : src/person/Person.i
+
+# target to preprocess a source file
+src/person/Person.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.i
+.PHONY : src/person/Person.cpp.i
+
+src/person/Person.s: src/person/Person.cpp.s
+.PHONY : src/person/Person.s
+
+# target to generate assembly for a file
+src/person/Person.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Person.cpp.s
+.PHONY : src/person/Person.cpp.s
+
+src/person/Pilot.o: src/person/Pilot.cpp.o
+.PHONY : src/person/Pilot.o
+
+# target to build an object file
+src/person/Pilot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.o
+.PHONY : src/person/Pilot.cpp.o
+
+src/person/Pilot.i: src/person/Pilot.cpp.i
+.PHONY : src/person/Pilot.i
+
+# target to preprocess a source file
+src/person/Pilot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.i
+.PHONY : src/person/Pilot.cpp.i
+
+src/person/Pilot.s: src/person/Pilot.cpp.s
+.PHONY : src/person/Pilot.s
+
+# target to generate assembly for a file
+src/person/Pilot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/Pilot.cpp.s
+.PHONY : src/person/Pilot.cpp.s
+
+src/person/User.o: src/person/User.cpp.o
+.PHONY : src/person/User.o
+
+# target to build an object file
+src/person/User.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/User.cpp.o
+.PHONY : src/person/User.cpp.o
+
+src/person/User.i: src/person/User.cpp.i
+.PHONY : src/person/User.i
+
+# target to preprocess a source file
+src/person/User.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/User.cpp.i
+.PHONY : src/person/User.cpp.i
+
+src/person/User.s: src/person/User.cpp.s
+.PHONY : src/person/User.s
+
+# target to generate assembly for a file
+src/person/User.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/person/User.cpp.s
+.PHONY : src/person/User.cpp.s
 
 src/utils/Date.o: src/utils/Date.cpp.o
 .PHONY : src/utils/Date.o
@@ -177,6 +465,102 @@ src/utils/Date.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/Date.cpp.s
 .PHONY : src/utils/Date.cpp.s
 
+src/utils/FileManager.o: src/utils/FileManager.cpp.o
+.PHONY : src/utils/FileManager.o
+
+# target to build an object file
+src/utils/FileManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.o
+.PHONY : src/utils/FileManager.cpp.o
+
+src/utils/FileManager.i: src/utils/FileManager.cpp.i
+.PHONY : src/utils/FileManager.i
+
+# target to preprocess a source file
+src/utils/FileManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.i
+.PHONY : src/utils/FileManager.cpp.i
+
+src/utils/FileManager.s: src/utils/FileManager.cpp.s
+.PHONY : src/utils/FileManager.s
+
+# target to generate assembly for a file
+src/utils/FileManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/FileManager.cpp.s
+.PHONY : src/utils/FileManager.cpp.s
+
+src/utils/IOStreamHelper.o: src/utils/IOStreamHelper.cpp.o
+.PHONY : src/utils/IOStreamHelper.o
+
+# target to build an object file
+src/utils/IOStreamHelper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.o
+.PHONY : src/utils/IOStreamHelper.cpp.o
+
+src/utils/IOStreamHelper.i: src/utils/IOStreamHelper.cpp.i
+.PHONY : src/utils/IOStreamHelper.i
+
+# target to preprocess a source file
+src/utils/IOStreamHelper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.i
+.PHONY : src/utils/IOStreamHelper.cpp.i
+
+src/utils/IOStreamHelper.s: src/utils/IOStreamHelper.cpp.s
+.PHONY : src/utils/IOStreamHelper.s
+
+# target to generate assembly for a file
+src/utils/IOStreamHelper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/IOStreamHelper.cpp.s
+.PHONY : src/utils/IOStreamHelper.cpp.s
+
+src/utils/JSONFileManager.o: src/utils/JSONFileManager.cpp.o
+.PHONY : src/utils/JSONFileManager.o
+
+# target to build an object file
+src/utils/JSONFileManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.o
+.PHONY : src/utils/JSONFileManager.cpp.o
+
+src/utils/JSONFileManager.i: src/utils/JSONFileManager.cpp.i
+.PHONY : src/utils/JSONFileManager.i
+
+# target to preprocess a source file
+src/utils/JSONFileManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.i
+.PHONY : src/utils/JSONFileManager.cpp.i
+
+src/utils/JSONFileManager.s: src/utils/JSONFileManager.cpp.s
+.PHONY : src/utils/JSONFileManager.s
+
+# target to generate assembly for a file
+src/utils/JSONFileManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/JSONFileManager.cpp.s
+.PHONY : src/utils/JSONFileManager.cpp.s
+
+src/utils/exceptions/Undefined_role_exception.o: src/utils/exceptions/Undefined_role_exception.cpp.o
+.PHONY : src/utils/exceptions/Undefined_role_exception.o
+
+# target to build an object file
+src/utils/exceptions/Undefined_role_exception.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.o
+.PHONY : src/utils/exceptions/Undefined_role_exception.cpp.o
+
+src/utils/exceptions/Undefined_role_exception.i: src/utils/exceptions/Undefined_role_exception.cpp.i
+.PHONY : src/utils/exceptions/Undefined_role_exception.i
+
+# target to preprocess a source file
+src/utils/exceptions/Undefined_role_exception.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.i
+.PHONY : src/utils/exceptions/Undefined_role_exception.cpp.i
+
+src/utils/exceptions/Undefined_role_exception.s: src/utils/exceptions/Undefined_role_exception.cpp.s
+.PHONY : src/utils/exceptions/Undefined_role_exception.s
+
+# target to generate assembly for a file
+src/utils/exceptions/Undefined_role_exception.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AirlineAPP.dir/build.make CMakeFiles/AirlineAPP.dir/src/utils/exceptions/Undefined_role_exception.cpp.s
+.PHONY : src/utils/exceptions/Undefined_role_exception.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +570,60 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... AirlineAPP"
-	@echo "... functional_testing/dateTest.o"
-	@echo "... functional_testing/dateTest.i"
-	@echo "... functional_testing/dateTest.s"
+	@echo "... src/APP.o"
+	@echo "... src/APP.i"
+	@echo "... src/APP.s"
+	@echo "... src/factory/ConcreteUserFactory.o"
+	@echo "... src/factory/ConcreteUserFactory.i"
+	@echo "... src/factory/ConcreteUserFactory.s"
+	@echo "... src/flight/Flight.o"
+	@echo "... src/flight/Flight.i"
+	@echo "... src/flight/Flight.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/manager/FlightManager.o"
+	@echo "... src/manager/FlightManager.i"
+	@echo "... src/manager/FlightManager.s"
+	@echo "... src/person/Administrator.o"
+	@echo "... src/person/Administrator.i"
+	@echo "... src/person/Administrator.s"
+	@echo "... src/person/BookingAgent.o"
+	@echo "... src/person/BookingAgent.i"
+	@echo "... src/person/BookingAgent.s"
+	@echo "... src/person/CrewAttendant.o"
+	@echo "... src/person/CrewAttendant.i"
+	@echo "... src/person/CrewAttendant.s"
+	@echo "... src/person/FlightAttendant.o"
+	@echo "... src/person/FlightAttendant.i"
+	@echo "... src/person/FlightAttendant.s"
+	@echo "... src/person/Passenger.o"
+	@echo "... src/person/Passenger.i"
+	@echo "... src/person/Passenger.s"
+	@echo "... src/person/Person.o"
+	@echo "... src/person/Person.i"
+	@echo "... src/person/Person.s"
+	@echo "... src/person/Pilot.o"
+	@echo "... src/person/Pilot.i"
+	@echo "... src/person/Pilot.s"
+	@echo "... src/person/User.o"
+	@echo "... src/person/User.i"
+	@echo "... src/person/User.s"
 	@echo "... src/utils/Date.o"
 	@echo "... src/utils/Date.i"
 	@echo "... src/utils/Date.s"
+	@echo "... src/utils/FileManager.o"
+	@echo "... src/utils/FileManager.i"
+	@echo "... src/utils/FileManager.s"
+	@echo "... src/utils/IOStreamHelper.o"
+	@echo "... src/utils/IOStreamHelper.i"
+	@echo "... src/utils/IOStreamHelper.s"
+	@echo "... src/utils/JSONFileManager.o"
+	@echo "... src/utils/JSONFileManager.i"
+	@echo "... src/utils/JSONFileManager.s"
+	@echo "... src/utils/exceptions/Undefined_role_exception.o"
+	@echo "... src/utils/exceptions/Undefined_role_exception.i"
+	@echo "... src/utils/exceptions/Undefined_role_exception.s"
 .PHONY : help
 
 

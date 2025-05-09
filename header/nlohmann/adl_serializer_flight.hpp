@@ -1,7 +1,9 @@
+#pragma once
 #include <stdexcept>
 #include <iostream>
 #include "json.hpp"
 #include "../flight/Flight.hpp"
+#include "../utils/Date.hpp"
 namespace nlohmann 
 {
     template<>
@@ -20,8 +22,8 @@ namespace nlohmann
                 {"status", flight.getStatus()},
                 {"price", flight.getPrice()},
                 {"available seats", flight.getNumOfAvailableSeats()},
-                {"FA id", flight.getFlighAttendant()->getID()},
-                {"PL id", flight.getPilot()->getID()}
+                {"FA id", flight.getFlighAttendant() ? flight.getFlighAttendant()->getID() : ""},
+                {"PL id", flight.getPilot() ? flight.getPilot()->getID() : ""}
             };
         }
 
@@ -54,7 +56,7 @@ namespace nlohmann
                 flight.setFlightAttendant(fa_ptr);
                 flight.setNumOfAvailableSeats(j.at("available seats").get<int>());
             }catch(const std::exception &e) {
-                std::cerr<<"Invalid json input data\n";
+                std::cerr<<"Invalid json input data\n"<<e.what()<<std::endl;
             }
         }
     };

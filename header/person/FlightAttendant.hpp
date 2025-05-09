@@ -7,7 +7,7 @@ class FlightAttendant : public CrewAttendant {
     friend std::istream& operator >> (std::istream & is, FlightAttendant& pilot);
     friend std::ostream& operator <<(std::ostream & os, const FlightAttendant& pilot);   
     public:
-    FlightAttendant() = default;
+    FlightAttendant();
     FlightAttendant(const FlightAttendant & other) = default;
     FlightAttendant(FlightAttendant && other) = default;
 };

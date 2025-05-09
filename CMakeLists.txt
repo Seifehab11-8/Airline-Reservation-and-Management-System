@@ -21,36 +21,49 @@ endif()
 
 # List specific source files
 set(SOURCES
-    # src/main.cpp
-    # src/person/Person.cpp
-    # src/person/User.cpp
-    # src/person/BookingAgent.cpp
-    # src/person/Administrator.cpp
-    # src/person/Passenger.cpp
-    # src/factory/ConcreteUserFactory.cpp
-    # src/utils/exceptions/Undefined_role_exception.cpp
-    # src/utils/IOStreamHelper.cpp
-    # src/APP.cpp
-    # src/utils/FileManager.cpp
+    src/main.cpp
+    src/person/Person.cpp
+    src/person/User.cpp
+    src/person/BookingAgent.cpp
+    src/person/Administrator.cpp
+    src/person/Passenger.cpp
+    src/factory/ConcreteUserFactory.cpp
+    src/utils/exceptions/Undefined_role_exception.cpp
+    src/utils/IOStreamHelper.cpp
+    src/APP.cpp
+    src/utils/FileManager.cpp
     # functional_testing/fileManagerTest001.cpp
     src/utils/Date.cpp
-    functional_testing/dateTest.cpp
+    # functional_testing/dateTest.cpp
+    src/manager/FlightManager.cpp
+    src/flight/Flight.cpp
+    src/person/CrewAttendant.cpp
+    src/person/FlightAttendant.cpp
+    src/person/Pilot.cpp
+    src/utils/JSONFileManager.cpp
 )
 
 set(HEADERS
-    # header/person/Person.hpp    
-    # header/person/User.hpp    
-    # header/person/BookingAgent.hpp
-    # header/person/Administrator.hpp
-    # header/person/Passenger.hpp
-    # header/factory/UserFactory.hpp
-    # header/factory/ConcreteUserFactory.hpp
-    # header/utils/Configs.hpp
-    # header/utils/exceptions/Undefined_role_exception.hpp
-    # header/utils/IOStreamHelper.hpp
-    # header/APP.hpp
-    # header/utils/FileManager.hpp
+    header/person/Person.hpp    
+    header/person/User.hpp    
+    header/person/BookingAgent.hpp
+    header/person/Administrator.hpp
+    header/person/Passenger.hpp
+    header/factory/UserFactory.hpp
+    header/factory/ConcreteUserFactory.hpp
+    header/utils/Configs.hpp
+    header/utils/exceptions/Undefined_role_exception.hpp
+    header/utils/IOStreamHelper.hpp
+    header/APP.hpp
+    header/utils/FileManager.hpp
     header/utils/Date.hpp
+    header/manager/FlightManager.hpp
+    header/flight/Flight.hpp
+    header/manager/IManager.hpp
+    header/person/CrewAttendant.hpp
+    header/person/FlightAttendant.hpp
+    header/person/Pilot.hpp
+    header/utils/JSONFileManager.hpp
 )
 
 # Add executable with explicit source files
