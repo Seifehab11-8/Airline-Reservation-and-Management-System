@@ -44,6 +44,7 @@ set(SOURCES
     src/manager/UserManager.cpp
     src/utils/exceptions/non_existing_user_exception.cpp
     src/utils/exceptions/wrong_password_exception.cpp
+    src/utils/HiddenInput.cpp
 )
 
 # List header files (optional, but can help IDEs index them)
@@ -71,6 +72,7 @@ set(HEADERS
     header/manager/UserManager.hpp
     header/utils/exceptions/non_existing_user_exception.hpp
     header/utils/exceptions/wrong_password_exception.hpp
+    header/utils/HiddenInput.hpp
 )
 
 # Create the executable from your sources
@@ -78,8 +80,7 @@ add_executable(AirlineAPP ${SOURCES} ${HEADERS})
 
 # Set output directories
 set_target_properties(AirlineAPP PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY_DEBUG "${CMAKE_BINARY_DIR}/bin/Debug"
-    RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/bin/Release"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/runnable/bin"
 )
 
 # For MSVC (Visual Studio) users: add a few compiler flags

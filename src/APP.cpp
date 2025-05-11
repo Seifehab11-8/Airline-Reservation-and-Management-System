@@ -8,6 +8,7 @@
 #include "../header/manager/UserManager.hpp"
 #include "../header/utils/exceptions/non_existing_user_exception.hpp"
 #include "../header/utils/exceptions/wrong_password_exception.hpp"
+#include "../header/utils/HiddenInput.hpp"
 
 using CreatorPtr = std::shared_ptr<ConcreteUserFactory>;
 
@@ -53,11 +54,7 @@ void APP::start()
                 std::getline(std::cin, username);
                 std::cout<<"Password : ";
                 //get(c) to capture white spaces
-                for(char c; std::cin.get(c) && c != '\n';) {
-                    password += c;
-                    std::cout << '*';
-                }
-                std::cout << std::endl;
+                password = HiddenInput::getInput();
 
                 UserPtr u_ptr = userManagerPtr->login(username, password, ur);
                 u_ptr->viewMainMenu();

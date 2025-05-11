@@ -5,9 +5,9 @@
 #include <memory>
 #include "IManager.hpp"
 
-constexpr const char* ADMIN_FILE_PATH = "../../../storage/admin001.json";
-constexpr const char* PASSENGER_FILE_PATH = "../../../storage/passenger001.json";
-constexpr const char* BOOKINGAGENT_FILE_PATH = "../../../storage/bookingAgent001.json";
+constexpr const char* ADMIN_FILE_PATH = "../storage/admin001.json";
+constexpr const char* PASSENGER_FILE_PATH = "../storage/passenger001.json";
+constexpr const char* BOOKINGAGENT_FILE_PATH = "../storage/bookingAgent001.json";
 class UserManager : public IManager {
     private:
         Json_file_ptr admin_file_access_ptr = std::make_shared<JSONFileManager>(ADMIN_FILE_PATH);
