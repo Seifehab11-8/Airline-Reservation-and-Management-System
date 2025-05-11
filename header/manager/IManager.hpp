@@ -4,8 +4,6 @@
 #include "../utils/JSONFileManager.hpp"
 #include <string>
 class IManager {
-    protected:
-    Json_file_ptr file_access_ptr;
     public:
     IManager() = default;
     IManager(const IManager &other) = default;

@@ -22,4 +22,5 @@ class User : public Person{
     std::string getPassword() const;
     virtual void viewMainMenu() = 0;
 };
+using UserPtr = std::shared_ptr<User>;
 #endif

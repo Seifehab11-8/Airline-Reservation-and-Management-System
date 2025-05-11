@@ -3,10 +3,13 @@
 #include "User.hpp"
 #include <string>
 #include <memory>   
-class FlightManager;                 
+class FlightManager;   
+class UserManager;              
 class Administrator : public User{
     private:
+    std::shared_ptr<UserManager> userManagerPtr;
     std::shared_ptr<FlightManager> flightManagerPtr;
+    friend std::ostream& operator<<(std::ostream& os, const Administrator& admin);
     public:
     Administrator();
     Administrator(const Administrator& other) = default;
@@ -14,6 +17,8 @@ class Administrator : public User{
     Administrator(std::string username, std::string password);
     void viewMainMenu() override;
     int viewManageFlightMenu();
+    int viewManageUserMenu();
+    bool operator==(const Administrator& other) const;
 };
-
+std::ostream& operator<<(std::ostream& os, const Administrator& admin);
 #endif 

@@ -29,34 +29,48 @@ namespace nlohmann
 
         static void from_json(const json &j, Flight &flight)
         {
-            try{
-                flight.setFlightNumber(j.at("flight number").get<std::string>());
-                flight.setOrigin(j.at("origin").get<std::string>());
-                flight.setDestination(j.at("destination").get<std::string>());
+            try {
+                flight.setFlightNumber(j.value("flight number", ""));
+                flight.setOrigin(j.value("origin", ""));
+                flight.setDestination(j.value("destination", ""));
 
-                DatePtr dept_ptr = std::make_shared<Date>();
-                dept_ptr->from_string(j.at("departure time").get<std::string>());
-                flight.setDeptTime(dept_ptr);
+                auto dept_time_str = j.value("departure time", "");
+                if (!dept_time_str.empty()) {
+                    auto dept_ptr = std::make_shared<Date>();
+                    dept_ptr->from_string(dept_time_str);
+                    flight.setDeptTime(dept_ptr);
+                }
 
-                DatePtr arr_ptr = std::make_shared<Date>();
-                arr_ptr->from_string(j.at("arrival time").get<std::string>());
-                flight.setArrivalTime(arr_ptr);
+                auto arr_time_str = j.value("arrival time", "");
+                if (!arr_time_str.empty()) {
+                    auto arr_ptr = std::make_shared<Date>();
+                    arr_ptr->from_string(arr_time_str);
+                    flight.setArrivalTime(arr_ptr);
+                }
 
-                flight.setAircraftType(j.at("aircraft type").get<std::string>());
-                flight.setNumOfSeats(j.at("total seats").get<int>());
-                flight.setStatus(j.at("status").get<std::string>());
-                flight.setPrice(j.at("price").get<double>());
+                flight.setAircraftType(j.value("aircraft type", ""));
+                flight.setNumOfSeats(j.value("total seats", 0));
+                flight.setStatus(j.value("status", ""));
+                flight.setPrice(j.value("price", 0.0));
+                flight.setNumOfAvailableSeats(j.value("available seats", 0));
 
-                PilotPtr pilot_ptr = std::make_shared<Pilot>();
-                pilot_ptr->setID(j.at("PL id").get<std::string>());
-                flight.setPilot(pilot_ptr);
+                // Only set pilot if ID is not empty
+                auto pl_id = j.value("PL id", "");
+                if (!pl_id.empty()) {
+                    PilotPtr pilot_ptr = std::make_shared<Pilot>();
+                    pilot_ptr->setID(pl_id);
+                    flight.setPilot(pilot_ptr);
+                }
 
-                FAPtr fa_ptr = std::make_shared<FlightAttendant>();
-                fa_ptr->setID(j.at("FA id").get<std::string>());
-                flight.setFlightAttendant(fa_ptr);
-                flight.setNumOfAvailableSeats(j.at("available seats").get<int>());
-            }catch(const std::exception &e) {
-                std::cerr<<"Invalid json input data\n"<<e.what()<<std::endl;
+                // Only set flight attendant if ID is not empty
+                auto fa_id = j.value("FA id", "");
+                if (!fa_id.empty()) {
+                    FAPtr fa_ptr = std::make_shared<FlightAttendant>();
+                    fa_ptr->setID(fa_id);
+                    flight.setFlightAttendant(fa_ptr);
+                }
+            } catch(const std::exception &e) {
+                std::cerr << "Invalid json input data\n" << e.what() << std::endl;
             }
         }
     };

@@ -11,8 +11,8 @@ namespace LoginAction {
 namespace AdminAction {
     enum class AdminMenuOption {
         MANAGE_FLIGHTS = 1,
-        MANAGE_USERS,
         MANAGE_AIRCRAFT,
+        MANAGE_USERS,
         GENERATE_REPORTS,
         LOGOUT
     };

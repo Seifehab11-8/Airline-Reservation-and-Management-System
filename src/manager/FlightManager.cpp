@@ -5,12 +5,6 @@
 #include "../../header/utils/IOStreamHelper.hpp"
 #include <vector>
 
-FlightManager::FlightManager() 
-{
-    file_access_ptr = std::make_shared<JSONFileManager>(FLIGHT_FILE_PATH);
-    crew_file_access_ptr = std::make_shared<JSONFileManager>(FLIGHT_CREW_FILE_PATH);
-}
-
 void FlightManager:: create() 
 {
     FLightPtr f_ptr = std::make_shared<Flight>();
@@ -59,6 +53,7 @@ void FlightManager:: update()
                 break;
             case Update_Flight_Options::CREW_ASSIGNMENT:
                 editCrewAssignment(flightPtr);
+                std::cout<<*flightPtr<<std::endl;
                 file_access_ptr->update(index, *flightPtr);
                 break;
             case Update_Flight_Options::STATUS:
@@ -73,42 +68,55 @@ void FlightManager:: update()
         std::cout<<"Flight Doesn't Exist"<<std::endl;
     }
 }
-void FlightManager:: _delete()
+void FlightManager::_delete()
 {
     std::string flight_id;
     std::cin.ignore();
-    std::cout<<"--- Delete Flight ---\n"
-                <<"Enter Flight Number to Delete eg.(AAxxx): ";
+    std::cout << "--- Delete Flight ---\n"
+              << "Enter Flight Number to Delete eg.(AAxxx): ";
     std::getline(std::cin, flight_id);
+
     FLightPtr flightPtr = std::make_shared<Flight>();
     flightPtr->setFlightNumber(flight_id);
     const int index = exist<Flight>(*flightPtr, file_access_ptr);
 
-    if(index != -1) {
-        flightPtr = std::make_shared<Flight>(file_access_ptr->read<Flight>(index));
-        auto pilot_index = exist<CrewAttendant>(*flightPtr->getPilot(), crew_file_access_ptr);
-        if(pilot_index != -1) {
-            auto it = std::make_shared<CrewAttendant>(crew_file_access_ptr->read<CrewAttendant>(pilot_index));
-            auto pilot = std::dynamic_pointer_cast<Pilot>(it);
-            pilot->setOccupation(false);
-            crew_file_access_ptr->update(pilot_index, *it);
-        }
-        auto flight_attendant_index = exist<CrewAttendant>(*flightPtr->getFlighAttendant(), crew_file_access_ptr);
-        if(flight_attendant_index != -1) {
-            auto it = std::make_shared<CrewAttendant>(crew_file_access_ptr->read<CrewAttendant>(flight_attendant_index));
-            auto flight_attendant = std::dynamic_pointer_cast<FlightAttendant>(it);
-            flight_attendant->setOccupation(false);
-            crew_file_access_ptr->update(flight_attendant_index, *it);
-        }
-        file_access_ptr->erase(index);
-        std::cout<<"Flight "
-                <<flightPtr->getFlightNumber()
-                <<" has been successfully deleted from the schedule."
-                <<std::endl;
+    if (index == -1) {
+        std::cout << "Flight Doesn't Exist" << std::endl;
+        return;
     }
-    else {
-        std::cout<<"Flight Doesn't Exist"<<std::endl;
+
+    // Read the full flight object
+    flightPtr = std::make_shared<Flight>(file_access_ptr->read<Flight>(index));
+
+    // Unassign pilot and flight attendant if assigned
+    auto pilot = flightPtr->getPilot();
+    if (pilot) {
+        auto crewPilot = std::dynamic_pointer_cast<CrewAttendant>(pilot);
+        if (crewPilot) {
+            int pilot_index = exist<CrewAttendant>(*crewPilot, crew_file_access_ptr);
+            if (pilot_index != -1) {
+                crewPilot->setOccupation(false);
+                crew_file_access_ptr->update(pilot_index, *crewPilot);
+            }
+        }
     }
+
+    auto flight_attendant = flightPtr->getFlighAttendant();
+    if (flight_attendant) {
+        auto crewFlightAttendant = std::dynamic_pointer_cast<CrewAttendant>(flight_attendant);
+        if (crewFlightAttendant) {
+            int fa_index = exist<CrewAttendant>(*crewFlightAttendant, crew_file_access_ptr);
+            if (fa_index != -1) {
+                crewFlightAttendant->setOccupation(false);
+                crew_file_access_ptr->update(fa_index, *crewFlightAttendant);
+            }
+        }
+    }
+
+    // Remove the flight
+    file_access_ptr->erase(index);
+    std::cout << "Flight " << flightPtr->getFlightNumber()
+              << " has been successfully deleted from the schedule." << std::endl;
 }
 void FlightManager:: view()
 {
@@ -219,69 +227,104 @@ void FlightManager::editFlightDetails(FLightPtr flightPtr)
 
 void FlightManager::editCrewAssignment(FLightPtr flightPtr)
 {
-    //! Working Section
     std::vector<CrewAttendant> crewList = crew_file_access_ptr->getArray<CrewAttendant>();
-    std::cout<<"--- Crew Assignment ---"<<std::endl;
-    std::cout<<"Available Pilots:\n";
-    for(const auto& it: crewList) {
-        if(it.getRole() == "Pilot" && it.getOccupation() == false) {
-            std::cout<<static_cast<const Pilot&>(it)<<std::endl;
+
+    // --- Pilot Selection ---
+    std::cout << "--- Crew Assignment ---\nAvailable Pilots:\n";
+    for (const auto& it : crewList) {
+        if (it.getRole() == "Pilot" && !it.getOccupation()) {
+            std::cout << static_cast<const Pilot&>(it) << std::endl;
         }
     }
-    //! End Working Section
-    std::cout<<"Select Pilot by ID: ";
+    std::cout << "Select Pilot by ID: ";
     std::string pilot_id;
     std::cin.ignore();
     std::getline(std::cin, pilot_id);
-    auto pilotPtr = std::make_shared<CrewAttendant>();
-    pilotPtr->setID(pilot_id);
-    int pilotIndex = exist<CrewAttendant>(*pilotPtr, crew_file_access_ptr);
-    if(pilotIndex != -1) {
-        auto it = std::make_shared<CrewAttendant>(crewList.at(pilotIndex));
-        auto pilot = std::dynamic_pointer_cast<Pilot>(it);
-        if(crewList.at(pilotIndex).getOccupation() == true) {
-            std::cout<<"Pilot is already assigned to another flight\n";
-            return;
+
+    int pilotIndex = -1;
+    for (size_t i = 0; i < crewList.size(); ++i) {
+        if (crewList[i].getID() == pilot_id && crewList[i].getRole() == "Pilot") {
+            pilotIndex = static_cast<int>(i);
+            break;
         }
-        flightPtr->setPilot(pilot);
-        crewList.at(pilotIndex).setOccupation(true);
-        crew_file_access_ptr->update(pilotIndex, crewList.at(pilotIndex));
     }
-    else {
-        std::cout<<"Pilot ID not found\n";
+    if (pilotIndex == -1) {
+        std::cout << "Pilot ID not found\n";
         return;
     }
-    std::cout<<"Available Flight Attendants:\n";
-    for(const auto& it: crewList) {
-        if(it.getRole() == "Flight Attendant" && it.getOccupation() == false) {
-            std::cout<<static_cast<const FlightAttendant&>(it)<<std::endl;
+    if (crewList[pilotIndex].getOccupation()) {
+        std::cout << "Pilot is already assigned to another flight\n";
+        return;
+    }
+
+    // Unassign previous pilot if any
+    auto prevPilotPtr = flightPtr->getPilot();
+    if (prevPilotPtr) {
+        auto prevCrew = std::dynamic_pointer_cast<CrewAttendant>(prevPilotPtr);
+        if (prevCrew) {
+            int prevIndex = exist<CrewAttendant>(*prevCrew, crew_file_access_ptr);
+            if (prevIndex != -1) {
+                prevCrew->setOccupation(false);
+                crew_file_access_ptr->update(prevIndex, *prevCrew);
+            }
         }
     }
-    std::cout<<"Select Flight Attendant by ID: ";
+
+    // Assign new pilot
+    auto pilotPtr = std::make_shared<Pilot>(static_cast<const Pilot&>(crewList[pilotIndex]));
+    pilotPtr->setName(crewList[pilotIndex].getName());
+    flightPtr->setPilot(pilotPtr);
+    crewList[pilotIndex].setOccupation(true);
+    crew_file_access_ptr->update(pilotIndex, crewList[pilotIndex]);
+
+    // --- Flight Attendant Selection ---
+    std::cout << "Available Flight Attendants:\n";
+    for (const auto& it : crewList) {
+        if (it.getRole() == "Flight Attendant" && !it.getOccupation()) {
+            std::cout << static_cast<const FlightAttendant&>(it) << std::endl;
+        }
+    }
+    std::cout << "Select Flight Attendant by ID: ";
     std::string fa_id;
     std::getline(std::cin, fa_id);
-    auto flightAttendantPtr = std::make_shared<CrewAttendant>();
-    flightAttendantPtr->setID(fa_id);
-    int flightAttendantIndex = exist<CrewAttendant>(*flightAttendantPtr, crew_file_access_ptr);
-    if(flightAttendantIndex != -1) {
-        auto it = std::make_shared<CrewAttendant>(crewList.at(flightAttendantIndex));
-        auto flightAttendant = std::dynamic_pointer_cast<FlightAttendant>(it);
-        if(crewList.at(flightAttendantIndex).getOccupation() == true) {
-            std::cout<<"Flight Attendant is already assigned to another flight\n";
-            return;
+
+    int faIndex = -1;
+    for (size_t i = 0; i < crewList.size(); ++i) {
+        if (crewList[i].getID() == fa_id && crewList[i].getRole() == "Flight Attendant") {
+            faIndex = static_cast<int>(i);
+            break;
         }
-        flightPtr->setFlightAttendant(flightAttendant);
-        crewList.at(flightAttendantIndex).setOccupation(true);
-        crew_file_access_ptr->update(flightAttendantIndex, crewList.at(flightAttendantIndex));
     }
-    else {
-        std::cout<<"Flight Attendant ID not found\n";
+    if (faIndex == -1) {
+        std::cout << "Flight Attendant ID not found\n";
         return;
     }
-    std::cout<<"Crew assigned successfully to Flight "
-            <<flightPtr->getFlightNumber()
-            <<std::endl;
-    
+    if (crewList[faIndex].getOccupation()) {
+        std::cout << "Flight Attendant is already assigned to another flight\n";
+        return;
+    }
+
+    // Unassign previous flight attendant if any
+    auto prevFAPtr = flightPtr->getFlighAttendant();
+    if (prevFAPtr) {
+        auto prevCrew = std::dynamic_pointer_cast<CrewAttendant>(prevFAPtr);
+        if (prevCrew) {
+            int prevIndex = exist<CrewAttendant>(*prevCrew, crew_file_access_ptr);
+            if (prevIndex != -1) {
+                prevCrew->setOccupation(false);
+                crew_file_access_ptr->update(prevIndex, *prevCrew);
+            }
+        }
+    }
+
+    // Assign new flight attendant
+    auto faPtr = std::make_shared<FlightAttendant>(static_cast<const FlightAttendant&>(crewList[faIndex]));
+    faPtr->setName(crewList[faIndex].getName());
+    flightPtr->setFlightAttendant(faPtr);
+    crewList[faIndex].setOccupation(true);
+    crew_file_access_ptr->update(faIndex, crewList[faIndex]);
+
+    std::cout << "Crew assigned successfully to Flight " << flightPtr->getFlightNumber() << std::endl;
 }
 
 void FlightManager::editStatus(FLightPtr flightPtr)

@@ -10,9 +10,10 @@ constexpr const char* FLIGHT_FILE_PATH = "../../../storage/flights001.json";
 constexpr const char* FLIGHT_CREW_FILE_PATH = "../../../storage/crew.json";
 class FlightManager : public IManager{
     private:
-    Json_file_ptr crew_file_access_ptr;
+    Json_file_ptr file_access_ptr = std::make_shared<JSONFileManager>(FLIGHT_FILE_PATH);
+    Json_file_ptr crew_file_access_ptr = std::make_shared<JSONFileManager>(FLIGHT_CREW_FILE_PATH);
     public:
-    FlightManager();
+    FlightManager() = default;
     FlightManager(const FlightManager &other) = default;
     FlightManager(FlightManager && other) = default;
     void create() override;

@@ -9,7 +9,7 @@ class Passenger : public User{
     std::vector<std::string> preference;
     std::vector<std::string> flightHistory;
     std::vector<std::string> notifications;
-
+    friend std::ostream& operator<<(std::ostream& os, const Passenger& passenger);
     public:
     Passenger() = default;
     Passenger(std::string username, std::string password);
@@ -27,6 +27,7 @@ class Passenger : public User{
     std::vector<std::string> getPreference() const;
     std::vector<std::string> getFlightHistory() const;
     std::vector<std::string> getNotifications() const;
+    bool operator==(const Passenger& other) const;
 };
-
+std::ostream& operator<<(std::ostream& os, const Passenger& passenger);
 #endif

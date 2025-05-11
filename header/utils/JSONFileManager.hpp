@@ -49,10 +49,6 @@ inline std::vector<type> JSONFileManager::getArray()
     for (const auto& item : jsonArray) {
         result.push_back(item.get<type>());
     }
-    if(result.empty()) {
-        std::cerr<<"No data found in the file\n";
-        return result;
-    }
     return result;
 }
 

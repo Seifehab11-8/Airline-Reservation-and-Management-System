@@ -1,30 +1,16 @@
 [
     {
         "FA id": "FA001",
-        "PL id": "PL001",
+        "PL id": "PL002",
         "aircraft type": "Boeing 737",
         "arrival time": "2025-05-10 11:00",
         "available seats": 180,
-        "departure time": "2025-05-10 08:00",
-        "destination": "LAX",
+        "departure time": "2018-23-23 43:34",
+        "destination": "kjdsfnfd",
         "flight number": "AA101",
         "origin": "JFK",
         "price": 350.0,
         "status": "Scheduled",
         "total seats": 180
-    },
-    {
-        "FA id": "FA002",
-        "PL id": "PL002",
-        "aircraft type": "Airbus A380",
-        "arrival time": "2025-05-11 17:00",
-        "available seats": 500,
-        "departure time": "2025-05-11 09:00",
-        "destination": "DXB",
-        "flight number": "BA202",
-        "origin": "LHR",
-        "price": 800.0,
-        "status": "Scheduled",
-        "total seats": 500
     }
 ]

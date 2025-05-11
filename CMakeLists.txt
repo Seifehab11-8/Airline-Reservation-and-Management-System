@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Sudoku_Project VERSION 1.0 LANGUAGES CXX)
+project(AirlineAPP VERSION 1.0 LANGUAGES CXX)
 
 # Use C++17 standard
 set(CMAKE_CXX_STANDARD 17)
@@ -41,8 +41,12 @@ set(SOURCES
     src/person/FlightAttendant.cpp
     src/person/Pilot.cpp
     src/utils/JSONFileManager.cpp
+    src/manager/UserManager.cpp
+    src/utils/exceptions/non_existing_user_exception.cpp
+    src/utils/exceptions/wrong_password_exception.cpp
 )
 
+# List header files (optional, but can help IDEs index them)
 set(HEADERS
     header/person/Person.hpp    
     header/person/User.hpp    
@@ -64,9 +68,12 @@ set(HEADERS
     header/person/FlightAttendant.hpp
     header/person/Pilot.hpp
     header/utils/JSONFileManager.hpp
+    header/manager/UserManager.hpp
+    header/utils/exceptions/non_existing_user_exception.hpp
+    header/utils/exceptions/wrong_password_exception.hpp
 )
 
-# Add executable with explicit source files
+# Create the executable from your sources
 add_executable(AirlineAPP ${SOURCES} ${HEADERS})
 
 # Set output directories
@@ -75,11 +82,25 @@ set_target_properties(AirlineAPP PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/bin/Release"
 )
 
-# Add compiler warnings
+# For MSVC (Visual Studio) users: add a few compiler flags
 if(MSVC)
-    target_compile_options(AirlineAPP PRIVATE 
+    target_compile_options(AirlineAPP PRIVATE
         /W3       # Lower warning level from W4 to W3
         /wd4244   # Disable specific warning about possible data loss
-        # Remove /WX to not treat warnings as errors
+        # remove /WX if you don't want warnings to be errors
     )
 endif()
+
+# --------------------------
+# Add and link libbcrypt
+# --------------------------
+# 1. Add the library subdirectory
+add_subdirectory(external/libbcrypt)
+
+# 2. Include the bcrypt headers
+target_include_directories(AirlineAPP PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/libbcrypt/include
+)
+
+# 3. Link the bcrypt library to AirlineAPP
+target_link_libraries(AirlineAPP PRIVATE bcrypt)

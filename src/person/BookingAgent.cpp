@@ -19,3 +19,17 @@ void BookingAgent::viewMainMenu() {
     TODO: contiue to managers
     */
 }
+
+bool BookingAgent::operator==(const BookingAgent& other) const
+{
+    return (this->username == other.username);
+}
+
+std::ostream& operator<<(std::ostream& os, const BookingAgent& bookingAgent)
+{
+    os << "Booking Agent: " << bookingAgent.username << "\n";
+    os << "Name: " << bookingAgent.name << "\n";
+    os << "ID: " << bookingAgent.id << "\n";
+    os << "Role: " << bookingAgent.role << "\n";
+    return os;
+}

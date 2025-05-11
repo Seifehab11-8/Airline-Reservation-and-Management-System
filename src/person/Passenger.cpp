@@ -23,7 +23,6 @@ void Passenger::appendPreference(std::string pref)
     preference.emplace_back(pref);
 }
 
-
 void Passenger::appendFlight(std::string flight)
 {
     flightHistory.emplace_back(flight);
@@ -72,4 +71,31 @@ std::vector<std::string> Passenger::getFlightHistory() const
 std::vector<std::string> Passenger::getNotifications() const
 {
     return notifications;
+}
+
+bool Passenger::operator==(const Passenger& other) const
+{
+    return (this->username == other.username);
+}
+
+std::ostream& operator<<(std::ostream& os, const Passenger& passenger)
+{
+    os << "Passenger username: " << passenger.username << "\n";
+    os<< "Name: " << passenger.name << "\n";
+    os << "ID: " << passenger.id << "\n";
+    os << "Role: " << passenger.role << "\n";
+    os << "Contact: " << passenger.contact << "\n";
+    os << "Preferences: ";
+    for (const auto& pref : passenger.preference) {
+        os << pref << " ";
+    }
+    os << "\nFlight History: ";
+    for (const auto& flight : passenger.flightHistory) {
+        os << flight << " ";
+    }
+    os << "\nNotifications: ";
+    for (const auto& note : passenger.notifications) {
+        os << note << " ";
+    }
+    return os;
 }

@@ -7,7 +7,7 @@
 #include "../utils/Configs.hpp"
 #include <string>
 
-using UserPtr = std::shared_ptr<User>;
+
 class UserFactory {
     protected:
     UserPtr u_ptr;

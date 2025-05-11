@@ -1,30 +1,30 @@
 [
     {
-        "flying hours": 12000.0,
-        "id": "P001",
-        "name": "John Smith",
+        "flying hours": 0.0,
+        "id": "PL001",
+        "name": "",
+        "occupation": false,
+        "role": "Pilot"
+    },
+    {
+        "flying hours": 0.0,
+        "id": "PL002",
+        "name": "",
         "occupation": true,
         "role": "Pilot"
     },
     {
-        "flying hours": 8500.0,
-        "id": "P002",
-        "name": "Emily Johnson",
-        "occupation": true,
-        "role": "Pilot"
-    },
-    {
-        "flying hours": 3200.0,
+        "flying hours": 0.0,
         "id": "FA001",
-        "name": "Alice Brown",
+        "name": "",
         "occupation": true,
         "role": "Flight Attendant"
     },
     {
-        "flying hours": 4100.0,
+        "flying hours": 0.0,
         "id": "FA002",
-        "name": "David Lee",
-        "occupation": true,
+        "name": "",
+        "occupation": false,
         "role": "Flight Attendant"
     }
 ]
