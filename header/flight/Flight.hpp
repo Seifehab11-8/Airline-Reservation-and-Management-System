@@ -20,12 +20,16 @@ class Flight {
     double price;
     FAPtr fa_ptr = std::make_shared<FlightAttendant>();
     PilotPtr pl_ptr = std::make_shared<Pilot>();
+    std::string gateNumber;
     friend std::ostream& operator<<(std::ostream& os, const Flight& flight);
     friend std::istream& operator>>(std::istream &is, Flight& flight);
     public:
     Flight() = default;
     Flight(const Flight& other) = default;
     Flight(Flight &&other) = default;
+    Flight& operator=(const Flight& other) = default;
+    Flight& operator=(Flight &&other) = default;
+    ~Flight() = default;
     std::string getFlightNumber() const;
     std::string getOrigin() const;
     std::string getDestination() const;
@@ -36,7 +40,7 @@ class Flight {
     double getPrice() const;
     std::string getStatus() const;
     int getNumOfAvailableSeats() const;
-    FAPtr getFlighAttendant() const;
+    FAPtr getFlightAttendant() const;
     PilotPtr getPilot() const;
     void setPrice(double price);
     void setNumOfAvailableSeats(int numOfAvailableSeats);
@@ -50,6 +54,8 @@ class Flight {
     void setStatus(const std::string& status);
     void setFlightAttendant(const FAPtr fa_ptr);
     void setPilot(const PilotPtr pl_ptr);
+    void setGateNumber(const std::string& gateNumber);
+    std::string getGateNumber() const;
     bool operator == (const Flight& other) const;
 };
 std::ostream& operator<<(std::ostream& os, const Flight& flight);

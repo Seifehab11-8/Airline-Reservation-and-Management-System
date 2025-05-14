@@ -202,7 +202,8 @@ Login successful!
 1. Search Flights
 2. View My Reservations
 3. Check-In
-4. Logout
+4. View My Notifications
+5. Logout
 Enter choice: 1
 
 --- Search Flights ---

@@ -21,7 +21,7 @@ namespace AdminAction {
 namespace PassengerAction{
     enum class PassengerMenuOption {
         SEARCH_FLIGHTS = 1,
-        BOOK_TICKET,
+        VIEW_RESERVATIONS,
         VIEW_BOOKINGS,
         CHECK_IN,
         LOGOUT

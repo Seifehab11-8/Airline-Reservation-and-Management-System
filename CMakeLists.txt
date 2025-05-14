@@ -45,6 +45,13 @@ set(SOURCES
     src/utils/exceptions/non_existing_user_exception.cpp
     src/utils/exceptions/wrong_password_exception.cpp
     src/utils/HiddenInput.cpp
+    src/manager/AircraftManager.cpp
+    src/flight/Aircraft.cpp
+    src/flight/Reservation.cpp
+    src/manager/BookingManager.cpp
+    src/payment/Cash.cpp
+    src/payment/CreditCard.cpp
+    src/payment/Paypal.cpp
 )
 
 # List header files (optional, but can help IDEs index them)
@@ -65,6 +72,7 @@ set(HEADERS
     header/manager/FlightManager.hpp
     header/flight/Flight.hpp
     header/manager/IManager.hpp
+    header/manager/AircraftManager.hpp
     header/person/CrewAttendant.hpp
     header/person/FlightAttendant.hpp
     header/person/Pilot.hpp
@@ -73,6 +81,15 @@ set(HEADERS
     header/utils/exceptions/non_existing_user_exception.hpp
     header/utils/exceptions/wrong_password_exception.hpp
     header/utils/HiddenInput.hpp
+    header/flight/Aircraft.hpp
+    header/utils/Constants.hpp
+    header/manager/AircraftManager.hpp
+    header/flight/Reservation.hpp
+    header/manager/BookingManager.hpp
+    header/payment/Cash.hpp
+    header/payment/CreditCard.hpp
+    header/payment/Paypal.hpp
+    header/payment/IPayment.hpp
 )
 
 # Create the executable from your sources

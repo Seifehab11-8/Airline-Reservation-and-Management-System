@@ -88,13 +88,21 @@ void Flight::setPrice(double price)
 {
     this->price = price;
 }
-FAPtr Flight::getFlighAttendant() const
+FAPtr Flight::getFlightAttendant() const
 {
     return fa_ptr;
 }
 PilotPtr Flight::getPilot() const
 {
     return pl_ptr;
+}
+std::string Flight::getGateNumber() const
+{
+    return gateNumber;
+}
+void Flight::setGateNumber(const std::string& gateNumber)
+{
+    this->gateNumber = gateNumber;
 }
 std::ostream& operator<<(std::ostream& os, const Flight& flight)
 {
@@ -105,11 +113,11 @@ std::ostream& operator<<(std::ostream& os, const Flight& flight)
     << "Origin: " << flight.origin << "\n"
     << "Destination: " << flight.destination << "\n"
     << "Available Seats: " << flight.numOfAvailableSeats<< "\n"
-    << "Price: " << flight.price << "\n";
-    if(flight.fa_ptr != nullptr) {
+    << "Price: $" << flight.price << "\n";
+    if(flight.fa_ptr != nullptr && flight.fa_ptr->getName() == "") {
         os << "Flight Attendant: " << flight.fa_ptr->getID() << "\n";
     }
-    if(flight.pl_ptr != nullptr) {
+    if(flight.pl_ptr != nullptr && flight.pl_ptr->getName() == "") {
         os << "Pilot: " << flight.pl_ptr->getID() << "\n";
     }
     os << "Status: " << flight.status << "\n";
@@ -133,12 +141,16 @@ std::istream &operator>>(std::istream &is, Flight &flight)
     std::cout<<"Enter Aircraft Type: ";
     std::getline(is, flight.aircraftType);
     std::cout<<"Enter Total Seats: ";
-    flight.numOfAvailableSeats = IOStreamHelper::InputNumeric();
+    flight.numOfSeats = IOStreamHelper::InputNumeric();
+    flight.numOfAvailableSeats = flight.numOfSeats;
     is.ignore();
     std::cout<<"Enter Status (Scheduled/Delayed/Canceled): ";
     std::getline(is, flight.status);
     std::cout<<"Enter Flight Price: ";
     is>>flight.price;
+    is.ignore();
+    std::cout<<"Enter Gate Number: ";
+    std::getline(is, flight.gateNumber);
     return is;
 }
 

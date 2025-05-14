@@ -22,8 +22,9 @@ namespace nlohmann
                 {"status", flight.getStatus()},
                 {"price", flight.getPrice()},
                 {"available seats", flight.getNumOfAvailableSeats()},
-                {"FA id", flight.getFlighAttendant() ? flight.getFlighAttendant()->getID() : ""},
-                {"PL id", flight.getPilot() ? flight.getPilot()->getID() : ""}
+                {"FA id", flight.getFlightAttendant() ? flight.getFlightAttendant()->getID() : ""},
+                {"PL id", flight.getPilot() ? flight.getPilot()->getID() : ""},
+                {"gate number", flight.getGateNumber()}
             };
         }
 
@@ -69,6 +70,7 @@ namespace nlohmann
                     fa_ptr->setID(fa_id);
                     flight.setFlightAttendant(fa_ptr);
                 }
+                flight.setGateNumber(j.value("gate number", ""));
             } catch(const std::exception &e) {
                 std::cerr << "Invalid json input data\n" << e.what() << std::endl;
             }

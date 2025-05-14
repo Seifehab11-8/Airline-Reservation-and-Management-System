@@ -10,6 +10,7 @@
 #include "../nlohmann/adl_serializer_flight.hpp"
 #include "../nlohmann/adl_serializer_crewAttendant.hpp"
 #include "../nlohmann/adl_serializer_passenger.hpp"
+#include "../nlohmann/adl_serializer_reservation.hpp"
 
 using File_mPtr = std::shared_ptr<FileManager>;
 using json = nlohmann::json;

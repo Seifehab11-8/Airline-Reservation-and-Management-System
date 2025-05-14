@@ -12,6 +12,8 @@ class IManager {
     virtual void update() = 0;
     virtual void _delete() = 0;
     virtual void view() = 0;
+    virtual int viewMenu() = 0;
+    virtual ~IManager() = default;
     template<typename type> 
     int exist(const type& element, Json_file_ptr file_access_ptr);
 };

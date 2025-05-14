@@ -3,6 +3,7 @@
 #include "../../header/person/FlightAttendant.hpp"
 #include "../../header/flight/Flight.hpp"
 #include "../../header/utils/IOStreamHelper.hpp"
+#include "../../header/flight/Reservation.hpp"
 #include <vector>
 
 void FlightManager:: create() 
@@ -101,7 +102,7 @@ void FlightManager::_delete()
         }
     }
 
-    auto flight_attendant = flightPtr->getFlighAttendant();
+    auto flight_attendant = flightPtr->getFlightAttendant();
     if (flight_attendant) {
         auto crewFlightAttendant = std::dynamic_pointer_cast<CrewAttendant>(flight_attendant);
         if (crewFlightAttendant) {
@@ -142,6 +143,7 @@ void FlightManager::editFlightDetails(FLightPtr flightPtr)
                     <<"5. Arrival time\n"
                     <<"6. Aircraft\n"
                     <<"7. Number of seats\n"
+                    <<"8. Gate Number\n"
                     <<"Enter choice: ";
     int option;
     std::cin>>option;
@@ -220,6 +222,14 @@ void FlightManager::editFlightDetails(FLightPtr flightPtr)
             flightPtr->setNumOfSeats(numOfSeats);
             break;
         }
+        case 8: {
+            std::cout<<"Enter Gate Number: ";
+            std::cin.ignore();
+            std::string gateNumber;
+            std::getline(std::cin, gateNumber);
+            flightPtr->setGateNumber(gateNumber);
+            break;
+        }
         default:
             break;
     }
@@ -228,6 +238,12 @@ void FlightManager::editFlightDetails(FLightPtr flightPtr)
 void FlightManager::editCrewAssignment(FLightPtr flightPtr)
 {
     std::vector<CrewAttendant> crewList = crew_file_access_ptr->getArray<CrewAttendant>();
+
+    // Calculate flight hours for this flight (arrival vs. departure)
+    double flightHours = 0.0;
+    if (flightPtr->getArrivalTime() && flightPtr->getDeptTime()) {
+        flightHours = flightPtr->getArrivalTime()->differenceHoursMin(*flightPtr->getDeptTime());
+    }
 
     // --- Pilot Selection ---
     std::cout << "--- Crew Assignment ---\nAvailable Pilots:\n";
@@ -252,29 +268,27 @@ void FlightManager::editCrewAssignment(FLightPtr flightPtr)
         std::cout << "Pilot ID not found\n";
         return;
     }
-    if (crewList[pilotIndex].getOccupation()) {
-        std::cout << "Pilot is already assigned to another flight\n";
-        return;
-    }
 
-    // Unassign previous pilot if any
+    // Unassign previous pilot if any, subtract flight hours
     auto prevPilotPtr = flightPtr->getPilot();
     if (prevPilotPtr) {
         auto prevCrew = std::dynamic_pointer_cast<CrewAttendant>(prevPilotPtr);
         if (prevCrew) {
             int prevIndex = exist<CrewAttendant>(*prevCrew, crew_file_access_ptr);
             if (prevIndex != -1) {
+                prevCrew->setFlyingHours(prevCrew->getFlyingHours() - flightHours);
                 prevCrew->setOccupation(false);
                 crew_file_access_ptr->update(prevIndex, *prevCrew);
             }
         }
     }
 
-    // Assign new pilot
+    // Assign new pilot and add flight hours
     auto pilotPtr = std::make_shared<Pilot>(static_cast<const Pilot&>(crewList[pilotIndex]));
     pilotPtr->setName(crewList[pilotIndex].getName());
     flightPtr->setPilot(pilotPtr);
     crewList[pilotIndex].setOccupation(true);
+    crewList[pilotIndex].setFlyingHours(crewList[pilotIndex].getFlyingHours() + flightHours);
     crew_file_access_ptr->update(pilotIndex, crewList[pilotIndex]);
 
     // --- Flight Attendant Selection ---
@@ -299,29 +313,27 @@ void FlightManager::editCrewAssignment(FLightPtr flightPtr)
         std::cout << "Flight Attendant ID not found\n";
         return;
     }
-    if (crewList[faIndex].getOccupation()) {
-        std::cout << "Flight Attendant is already assigned to another flight\n";
-        return;
-    }
 
-    // Unassign previous flight attendant if any
-    auto prevFAPtr = flightPtr->getFlighAttendant();
+    // Unassign previous flight attendant if any, subtract flight hours
+    auto prevFAPtr = flightPtr->getFlightAttendant();
     if (prevFAPtr) {
         auto prevCrew = std::dynamic_pointer_cast<CrewAttendant>(prevFAPtr);
         if (prevCrew) {
             int prevIndex = exist<CrewAttendant>(*prevCrew, crew_file_access_ptr);
             if (prevIndex != -1) {
+                prevCrew->setFlyingHours(prevCrew->getFlyingHours() - flightHours);
                 prevCrew->setOccupation(false);
                 crew_file_access_ptr->update(prevIndex, *prevCrew);
             }
         }
     }
 
-    // Assign new flight attendant
+    // Assign new flight attendant and add flight hours
     auto faPtr = std::make_shared<FlightAttendant>(static_cast<const FlightAttendant&>(crewList[faIndex]));
     faPtr->setName(crewList[faIndex].getName());
     flightPtr->setFlightAttendant(faPtr);
     crewList[faIndex].setOccupation(true);
+    crewList[faIndex].setFlyingHours(crewList[faIndex].getFlyingHours() + flightHours);
     crew_file_access_ptr->update(faIndex, crewList[faIndex]);
 
     std::cout << "Crew assigned successfully to Flight " << flightPtr->getFlightNumber() << std::endl;
@@ -334,5 +346,62 @@ void FlightManager::editStatus(FLightPtr flightPtr)
     std::string status;
     std::getline(std::cin, status);
     flightPtr->setStatus(status);
+    if(status == "Delayed") {
+        std::cout<<"Enter new Departure Time: ";
+        DatePtr deptTime = std::make_shared<Date>();
+        std::cin>>*(deptTime);
+        flightPtr->setDeptTime(deptTime);
+        std::cout<<"Enter new Arrival Time: ";
+        DatePtr arrivalTime = std::make_shared<Date>();
+        std::cin>>*(arrivalTime);
+        flightPtr->setArrivalTime(arrivalTime);
+    }
+    std::vector<Reservation> reservationList = reservation_file_access_ptr->getArray<Reservation>();
+    std::vector<Passenger> passengerList = passenger_file_access_ptr->getArray<Passenger>();
+    for (auto& reservation : reservationList) {
+        if (reservation.getFlightNumber() == flightPtr->getFlightNumber()) {
+            for (auto& passenger : passengerList) {
+                if (passenger.getID() == reservation.getPassengerID()) {
+                    if(status == "Delayed"){
+                        passenger.appendNotification("Your flight " + flightPtr->getFlightNumber() 
+                                    + " has been " + status+ " to " + flightPtr->getDeptTime()->to_string());
+                    }
+                    else if(status == "Canceled") {
+                        std::string note = "Your flight " + flightPtr->getFlightNumber() 
+                        + " has been " + status + " and your payment $" + std::to_string(reservation.getPricePaid()) + " has been refunded. to ";
+                        reservation.setStatus("Canceled");
+                        if(auto payment = std::dynamic_pointer_cast<CreditCard>(reservation.getPaymentMethod())) {
+                            note+= ("Credit Card Number: "+ payment->getCardNumber());
+                        }
+                        else if(auto payment = std::dynamic_pointer_cast<Paypal>(reservation.getPaymentMethod())) {
+                            note+= ("Paypal Email: "+ payment->getEmail());
+                        }
+                        else {
+                            note+= ("your wallet");
+                        }
+                        passenger.appendNotification(note);
+                        passenger.setBalance(passenger.getBalance() + reservation.getPricePaid());
+                    }
+                    passenger_file_access_ptr->update(exist<Passenger>(passenger, passenger_file_access_ptr), passenger);
+                    reservation_file_access_ptr->update(exist<Reservation>(reservation, reservation_file_access_ptr), reservation);
+                }
+            }
+        }
+    }
+    
     std::cout<<"Flight status has been updated to: "<<status<<std::endl;
+}
+
+int FlightManager::viewMenu()
+{
+    int choice;
+    std::cout<<"--- Manage Flights ---\n"
+                "1. Add Flight\n"
+                "2. Update Flight\n"
+                "3. Delete Flight\n"
+                "4. View Flights\n"
+                "5. Back to Main Menu\n"
+                "Enter choice: ";
+    choice = IOStreamHelper::InputNumeric();
+    return choice;
 }

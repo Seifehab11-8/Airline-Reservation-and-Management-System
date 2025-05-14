@@ -22,6 +22,15 @@ class Date {
     Date(Date &&other) = default;
     void from_string(std::string str);
     std::string to_string() const;
+    void setDate(int day, int month, int year);
+    void setTime(int hour, int min);
+    int getDay() const ;
+    int getMonth() const ;
+    int getYear() const ;
+    int getHour() const ;
+    int getMin() const ;
+    double differenceHoursMin(const Date &other) const;
+
 };
 using DatePtr = std::shared_ptr<Date>;
 

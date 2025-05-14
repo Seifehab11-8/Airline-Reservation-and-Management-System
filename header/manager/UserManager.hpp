@@ -4,10 +4,8 @@
 #include <string>
 #include <memory>
 #include "IManager.hpp"
+#include "../utils/Constants.hpp"
 
-constexpr const char* ADMIN_FILE_PATH = "../storage/admin001.json";
-constexpr const char* PASSENGER_FILE_PATH = "../storage/passenger001.json";
-constexpr const char* BOOKINGAGENT_FILE_PATH = "../storage/bookingAgent001.json";
 class UserManager : public IManager {
     private:
         Json_file_ptr admin_file_access_ptr = std::make_shared<JSONFileManager>(ADMIN_FILE_PATH);
@@ -21,6 +19,7 @@ class UserManager : public IManager {
         void update() override;
         void _delete() override;
         void view() override;
+        int viewMenu() override;
         UserPtr login(std::string username, std::string password, LoginAction::UserRole role);
 };
 #endif

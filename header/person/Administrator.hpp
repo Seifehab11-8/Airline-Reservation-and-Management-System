@@ -16,8 +16,6 @@ class Administrator : public User{
     Administrator(Administrator&&other) = default;
     Administrator(std::string username, std::string password);
     void viewMainMenu() override;
-    int viewManageFlightMenu();
-    int viewManageUserMenu();
     bool operator==(const Administrator& other) const;
 };
 std::ostream& operator<<(std::ostream& os, const Administrator& admin);
