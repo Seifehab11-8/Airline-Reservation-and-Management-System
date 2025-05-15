@@ -35,7 +35,7 @@ void UserManager::create()
                 return;
             }
             if (exist<Administrator>(*adminPtr, admin_file_access_ptr) != -1) {
-                std::cout << "Admin ID duplication. Your flight must have a unique ID.\n";
+                std::cout << "Admin Username duplication. Your Admin must have a unique Username.\n";
                 return;
             }
             adminPtr->setPassword(BCrypt::generateHash(password));
@@ -51,7 +51,7 @@ void UserManager::create()
                 return;
             }
             if (exist<Passenger>(*passengerPtr, passenger_file_access_ptr) != -1) {
-                std::cout << "Passenger ID duplication. Your flight must have a unique ID.\n";
+                std::cout << "Passenger Username duplication. Your Passenger must have a unique Username.\n";
                 return;
             }
             passengerPtr->setPassword(BCrypt::generateHash(password));
@@ -70,8 +70,9 @@ void UserManager::create()
             int numOfPreferences;
             numOfPreferences = IOStreamHelper::InputNumeric();
             std::cin.ignore();
-            std::cout << "Enter Preferences: ";
+            std::cout << "Enter Preferences: \n";
             for (int i = 0; i < numOfPreferences; i++) {
+                std::cout << i + 1 << ". Enter Preference: ";
                 std::string pref;
                 std::getline(std::cin, pref);
                 passengerPtr->appendPreference(pref);
@@ -81,13 +82,14 @@ void UserManager::create()
             int numOfOldFlights;
             numOfOldFlights = IOStreamHelper::InputNumeric();
             std::cin.ignore();
-            std::cout << "Enter Old Flights in flightHistory (use Flight ID): ";
+            std::cout << "Enter Old Flights in flightHistory (use Flight ID): \n";
             for (int i = 0; i < numOfOldFlights; i++) {
+                std::cout << i + 1 << ". Enter Flight ID: ";
                 std::string flight;
                 std::getline(std::cin, flight);
                 passengerPtr->appendFlight(flight);
             }
-
+            std::cout << std::endl;
             passenger_file_access_ptr->append(*passengerPtr);
             break;
         }
@@ -100,7 +102,7 @@ void UserManager::create()
                 return;
             }
             if (exist<BookingAgent>(*bookingAgentPtr, bookingAgent_file_access_ptr) != -1) {
-                std::cout << "Booking Agent ID duplication. Your flight must have a unique ID.\n";
+                std::cout << "Booking Agent Username duplication. Your Booking Agent must have a unique Username.\n";
                 return;
             }
             bookingAgentPtr->setPassword(BCrypt::generateHash(password));

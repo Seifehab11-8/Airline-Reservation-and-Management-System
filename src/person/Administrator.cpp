@@ -4,6 +4,7 @@
 #include "../../header/manager/FlightManager.hpp"
 #include "../../header/manager/UserManager.hpp"
 #include "../../header/manager/AircraftManager.hpp"
+#include "../../header/manager/ReportManager.hpp"
 #include <string>
 #include <iostream>
 Administrator::Administrator(std::string username, std::string password) : User(username, password)
@@ -15,6 +16,8 @@ Administrator::Administrator() : flightManagerPtr(std::make_shared<FlightManager
 void Administrator::viewMainMenu()
 {
     int main_menu_choice, choice;
+    std::shared_ptr<IManager> managerPtr = nullptr;
+    std::shared_ptr<ReportManager> reportManagerPtr = nullptr;
     do{
         std::cout<<"--- Administrator Menu ---\n"
                     "1. Manage Flights\n"
@@ -25,7 +28,6 @@ void Administrator::viewMainMenu()
                     "Enter choice: ";
         main_menu_choice = IOStreamHelper::InputNumeric();
         AdminAction::AdminMenuOption amo = static_cast<AdminAction::AdminMenuOption>(main_menu_choice);
-        std::shared_ptr<IManager> managerPtr; 
         switch(amo) {
             case AdminAction::AdminMenuOption::MANAGE_FLIGHTS:
                 managerPtr = std::make_shared<FlightManager>();
@@ -37,11 +39,16 @@ void Administrator::viewMainMenu()
                 managerPtr = std::make_shared<AircraftManager>();
                 break;
             case AdminAction::AdminMenuOption::GENERATE_REPORTS:
-            //to be implemented
+                managerPtr.reset();
+                reportManagerPtr = std::make_shared<ReportManager>();
                 break;
             case AdminAction::AdminMenuOption::LOGOUT:
                 std::cout<<"logging out...\n";
                 return;
+            default:
+                managerPtr.reset();
+                reportManagerPtr.reset();
+                break;
         }
         if(managerPtr.get() != nullptr) {
             do{
@@ -66,6 +73,9 @@ void Administrator::viewMainMenu()
                         std::cout<<"Invalid choice. Please try again.\n";
                 }
             }while(choice != 5);
+        }
+        else if(reportManagerPtr.get() != nullptr) {
+            reportManagerPtr->viewReportMenu();
         }
     }while(main_menu_choice != 5);
 }

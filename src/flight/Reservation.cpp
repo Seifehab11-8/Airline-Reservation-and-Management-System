@@ -4,8 +4,8 @@
 std::string Reservation::getFlightNumber() const {
     return flightNumber;
 }
-std::string Reservation::getPassengerID() const {
-    return passengerID;
+std::string Reservation::getPassengerUsername() const {
+    return passengerUsername;
 }
 std::string Reservation::getSeatNumber() const {
     return seatNumber;
@@ -16,8 +16,8 @@ int Reservation::getID() const {
 void Reservation::setFlightNumber(const std::string& flightNumber) {
     this->flightNumber = flightNumber;
 }
-void Reservation::setPassengerID(const std::string& passengerID) {
-    this->passengerID = passengerID;
+void Reservation::setPassengerUsername(const std::string& passengerUsername) {
+    this->passengerUsername = passengerUsername;
 }
 void Reservation::setSeatNumber(const std::string& seatNumber) {
     this->seatNumber = seatNumber;

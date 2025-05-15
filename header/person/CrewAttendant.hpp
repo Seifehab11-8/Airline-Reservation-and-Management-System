@@ -10,6 +10,8 @@ class CrewAttendant : public Person {
     CrewAttendant() = default;
     CrewAttendant(const CrewAttendant & other) = default;
     CrewAttendant(CrewAttendant && other) = default;
+    CrewAttendant& operator = (const CrewAttendant & other) = default;
+    CrewAttendant& operator = (CrewAttendant && other) = default;
     void setFlyingHours(const double flyingHours);
     double getFlyingHours() const;
     void setOccupation(const bool occupation);

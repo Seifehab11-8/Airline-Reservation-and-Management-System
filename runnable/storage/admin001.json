@@ -6,5 +6,13 @@
         "password": "$2a$12$eazf7rAO/4IUPyt1//Mkku9w.nrR552MPLUnZVe6T4tutQjJL61fa",
         "role": "admin",
         "username": "seif"
+    },
+    {
+        "id": "213",
+        "login status": false,
+        "name": "seif",
+        "password": "$2a$12$QVapYBD2/akG4gp3Vc6t.eeH5tYkWmKj5phErLtBoIWyJy2LFxBM6",
+        "role": "admin",
+        "username": "seifalla"
     }
 ]

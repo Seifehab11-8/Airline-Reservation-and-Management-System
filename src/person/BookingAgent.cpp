@@ -11,6 +11,7 @@
 #include "../../header/payment/Cash.hpp"
 #include <string>
 #include <iostream>
+#include <stdexcept>
 BookingAgent::BookingAgent():User(), bookingManager(std::make_shared<BookingManager>()) {}
 BookingAgent::BookingAgent(std::string username, std::string password):User(username, password), bookingManager(std::make_shared<BookingManager>()) {}
 void BookingAgent::viewMainMenu() {
@@ -22,7 +23,7 @@ void BookingAgent::viewMainMenu() {
                     "3. Modify Reservation\n"
                     "4. Cancel Reservation\n"
                     "5. Logout\n"
-                    "Enter choice:"; 
+                    "Enter choice: "; 
         choice = IOStreamHelper::InputNumeric();
         BookingAgentAction::BookingAgentMenuOption bamo = static_cast<BookingAgentAction::BookingAgentMenuOption>(choice);
         switch (bamo) {
@@ -36,7 +37,12 @@ void BookingAgent::viewMainMenu() {
                 modifyFlight();
                 break;
             case BookingAgentAction::BookingAgentMenuOption::CANCEL_RESERVATION:
-                cancelFlight();
+                try{
+                    cancelFlight();
+                }
+                catch(const std::exception &e) {
+                    std::cerr<<e.what()<<std::endl;
+                }
                 break;
             case BookingAgentAction::BookingAgentMenuOption::LOGOUT:
                 std::cout << "Logging out...\n";
@@ -81,10 +87,13 @@ void BookingAgent::searchFlight()
             std::cout<<"No flights found for the given criteria."<<std::endl;
             return;
         }
-        
+        DatePtr datePtr = Date::processDateFormat(date);
         std::cout<<"--- Available Flights ---"<<std::endl;
         for(const auto& it: flights) {
-            if(it.getOrigin() != origin || it.getDestination() != destination || it.getDeptTime()->to_string() != date) {
+            if(it.getOrigin() != origin || it.getDestination() != destination 
+            || it.getDeptTime()->getDay() != datePtr->getDay()
+            || it.getDeptTime()->getMonth() != datePtr->getMonth()
+            || it.getDeptTime()->getYear() != datePtr->getYear()) {
                 continue;
             }
             std::cout<<counter<<". \n"<<it<<std::endl;
@@ -96,7 +105,7 @@ void BookingAgent::bookFlight()
 {
     std::cout << "--- Booking a flight ---\n";
     std::string passengerId;
-    std::cout << "Enter passenger ID: ";
+    std::cout << "Enter passenger Username: ";
     std::cin >> passengerId;
 
     std::string flightNumber;
@@ -109,7 +118,7 @@ void BookingAgent::bookFlight()
     auto flights = flightPtr->getArray<Flight>();
     auto passengers = passengerPtr->getArray<Passenger>();
     auto passengerIt = std::find_if(passengers.begin(), passengers.end(), [&](const Passenger& p) {
-        return p.getID() == passengerId;
+        return p.getUsername() == passengerId;
     });
     if (passengerIt == passengers.end()) {
         std::cout << "Passenger not found.\n";
@@ -129,15 +138,14 @@ void BookingAgent::bookFlight()
     }
     flightIt->setNumOfAvailableSeats(flightIt->getNumOfAvailableSeats() - 1);
     flightPtr->update(std::distance(flights.begin(), flightIt), *flightIt);
-    reservationPtr->append(*reservation);
-    std::cout << "Flight booked successfully!\n";
+    std::cout << "\n\nFlight booked successfully!\n";
     std::cout << "Reservation ID: R" << reservation->getID() << "\n";
     std::cout << "Passenger :" << passengerIt->getName() << "\n";
     std::cout << "Flight: " << flightIt->getFlightNumber() << " from " << flightIt->getOrigin()
               << " to " << flightIt->getDestination() << "\n"
               << "Seat: " << reservation->getSeatNumber() << "\n"
               << "Total Cost: " << reservation->getPricePaid() << "\n";
-    std::cout << "Payment Method: " << reservation->getPaymentMethodType() << "\n";
+    std::cout << "Payment Method: " << reservation->getPaymentMethodType() << "\n\n";
 }
 void BookingAgent::cancelFlight()
 {
@@ -168,16 +176,16 @@ void BookingAgent::cancelFlight()
     std::cout << "Processing refund to ";
     if(auto payment = std::dynamic_pointer_cast<CreditCard>(reservation->getPaymentMethod())) {
         std::cout << "Credit Card number: "<< payment->getCardNumber() << "\n\n";
-        std::cout << "Reservation R"<< reservation->getID() << "has been successfully canceled.";
-        std::cout << "Refunding amount: " << reservation->getPricePaid() << "to your credit card."<< "\n\n";
+        std::cout << "Reservation R"<< reservation->getID() << "has been successfully canceled.\n";
+        std::cout << "Refunding amount: $" << reservation->getPricePaid() << " to your credit card."<< "\n\n";
     } else if(auto payment = std::dynamic_pointer_cast<Cash>(reservation->getPaymentMethod())) {
         std::cout << "Cash\n\n";
-        std::cout << "Reservation R"<< reservation->getID() << "has been successfully canceled.";
-        std::cout << "Refunding amount: " << reservation->getPricePaid() << " in cash."<< "\n\n";
+        std::cout << "Reservation R"<< reservation->getID() << "has been successfully canceled.\n";
+        std::cout << "Refunding amount: $" << reservation->getPricePaid() << " in cash."<< "\n\n";
     } else if(auto payment = std::dynamic_pointer_cast<Paypal>(reservation->getPaymentMethod())) {
         std::cout << "PayPal account: " << payment->getEmail() << "\n\n";
-        std::cout << "Reservation R"<< reservation->getID() << "has been successfully canceled.";
-        std::cout << "Refunding amount: " << reservation->getPricePaid() << " to your PayPal account."<< "\n\n";
+        std::cout << "Reservation R"<< reservation->getID() << " has been successfully canceled.\n";
+        std::cout << "Refunding amount: $" << reservation->getPricePaid() << " to your PayPal account."<< "\n\n";
     }
     reservation->setStatus("Canceled");
     reservationPtr->update(std::distance(reservationPtr->getArray<Reservation>().begin(), reservation), *reservation);
@@ -193,7 +201,7 @@ void BookingAgent::cancelFlight()
     auto passengerPtr = bookingManager->getPassengerPtr();
     auto passengers = passengerPtr->getArray<Passenger>();
     auto passengerIt = std::find_if(passengers.begin(), passengers.end(), [&](const Passenger& p) {
-        return p.getID() == reservation->getPassengerID();
+        return p.getUsername() == reservation->getPassengerUsername();
     });
     if (passengerIt != passengers.end()) {
         passengerIt->appendNotification("Your Reservation for flight "+ flightIt->getFlightNumber() + " has been Canceled");
@@ -216,7 +224,7 @@ void BookingAgent::modifyFlight()
             break;
         }
     }
-    if (reservation == reservations.end()) {
+    if (reservation >= reservations.end()) {
         std::cout << "Reservation not found.\n";
         return;
     }
@@ -231,7 +239,6 @@ void BookingAgent::modifyFlight()
                 std::string newSeatNumber;
                 std::cout << "Enter new seat number: ";
                 std::cin >> newSeatNumber;
-                auto reservationPtr = bookingManager->getReservationPtr();
                 int seatNum = std::stoi(newSeatNumber.substr(0,2));
                 char seatLetter = newSeatNumber[2];
                 auto flightPtr = bookingManager->getFlightPtr();
@@ -247,7 +254,7 @@ void BookingAgent::modifyFlight()
                 }
                 reservation->setSeatNumber(newSeatNumber);
                 reservation->setStatus("Pending");
-                reservationPtr->update(std::distance(reservationPtr->getArray<Reservation>().begin(), reservation), *reservation);
+                reservationPtr->update(std::distance(reservations.begin(), reservation), *reservation);
                 std::cout << "Reservation updated successfully!\n";
                 std::cout << "New Seat Number: " << reservation->getSeatNumber() << "\n";
             }

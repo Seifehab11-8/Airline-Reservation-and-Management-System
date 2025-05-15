@@ -144,7 +144,10 @@ void AircraftManager::update() {
             date->from_string(dateStr);
             auto oldDate = aircraft->getNextMaintenanceDate();
             if (oldDate) {
-                aircraft->appendMaintenanceHistory("Next Maintenance Date changed from " + oldDate->to_string() + " to " + dateStr);
+                std::string maintanenceReason;
+                std::cout << "Enter maintenance reason: ";
+                std::getline(std::cin, maintanenceReason);
+                aircraft->appendMaintenanceHistory("Maintenance Date changed from " + oldDate->to_string() + " to " + dateStr + ". Reason: " + maintanenceReason);
                 aircraft->setLastMaintenanceDate(oldDate);
             }
             aircraft->setNextMaintenanceDate(date);

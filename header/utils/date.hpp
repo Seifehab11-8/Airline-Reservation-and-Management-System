@@ -30,7 +30,9 @@ class Date {
     int getHour() const ;
     int getMin() const ;
     double differenceHoursMin(const Date &other) const;
-
+    static std::shared_ptr<Date> processMonthYearFormat(const std::string &date);
+    static std::shared_ptr<Date> processDateFormat(const std::string &date);
+    static std::string monthToText(int month);
 };
 using DatePtr = std::shared_ptr<Date>;
 

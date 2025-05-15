@@ -52,6 +52,7 @@ set(SOURCES
     src/payment/Cash.cpp
     src/payment/CreditCard.cpp
     src/payment/Paypal.cpp
+    src/manager/ReportManager.cpp
 )
 
 # List header files (optional, but can help IDEs index them)
@@ -90,6 +91,7 @@ set(HEADERS
     header/payment/CreditCard.hpp
     header/payment/Paypal.hpp
     header/payment/IPayment.hpp
+    header/manager/ReportManager.hpp
 )
 
 # Create the executable from your sources

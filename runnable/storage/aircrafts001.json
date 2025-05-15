@@ -1,0 +1,228 @@
+[
+    {
+        "ID": "AC001",
+        "last maintenance date": "2025-05-01 08:30",
+        "maintenance history": [
+            "Engine check",
+            "Landing gear check",
+            "Hydraulics test",
+            "Avionics check"
+        ],
+        "manufacturer": "Boeing",
+        "model": "Boeing 737",
+        "next maintenance date": "2025-06-01 08:30",
+        "range": 2800.0,
+        "seating capacity": 180
+    },
+    {
+        "ID": "AC002",
+        "last maintenance date": "2025-05-02 07:45",
+        "maintenance history": [
+            "Engine check",
+            "Landing gear check",
+            "Hydraulics test",
+            "Avionics check"
+        ],
+        "manufacturer": "Airbus",
+        "model": "Airbus A320",
+        "next maintenance date": "2025-06-02 07:45",
+        "range": 3000.0,
+        "seating capacity": 180
+    },
+    {
+        "ID": "AC003",
+        "last maintenance date": "2025-05-03 09:15",
+        "maintenance history": [
+            "Engine check",
+            "Cabin pressure test",
+            "Electrical system check",
+            "Wing inspection"
+        ],
+        "manufacturer": "Boeing",
+        "model": "Boeing 757",
+        "next maintenance date": "2025-06-03 09:15",
+        "range": 3800.0,
+        "seating capacity": 200
+    },
+    {
+        "ID": "AC004",
+        "last maintenance date": "2025-05-04 10:30",
+        "maintenance history": [
+            "Wing inspection",
+            "Fuel system test",
+            "Electronics upgrade",
+            "Hydraulics test"
+        ],
+        "manufacturer": "Airbus",
+        "model": "Airbus A321",
+        "next maintenance date": "2025-06-04 10:30",
+        "range": 4000.0,
+        "seating capacity": 220
+    },
+    {
+        "ID": "AC005",
+        "last maintenance date": "2025-05-05 14:00",
+        "maintenance history": [
+            "Avionics check",
+            "Gear retraction test",
+            "Engine check",
+            "Cabin pressure test"
+        ],
+        "manufacturer": "Boeing",
+        "model": "Boeing 767",
+        "next maintenance date": "2025-06-05 14:00",
+        "range": 5900.0,
+        "seating capacity": 250
+    },
+    {
+        "ID": "AC006",
+        "last maintenance date": "2025-05-06 11:15",
+        "maintenance history": [
+            "Hydraulics test",
+            "Avionics check",
+            "Engine tuning",
+            "Landing gear check"
+        ],
+        "manufacturer": "Airbus",
+        "model": "Airbus A330",
+        "next maintenance date": "2025-06-06 11:15",
+        "range": 6100.0,
+        "seating capacity": 270
+    },
+    {
+        "ID": "AC007",
+        "last maintenance date": "2025-05-07 09:00",
+        "maintenance history": [
+            "Wing inspection",
+            "Electronics upgrade",
+            "Fuel system test",
+            "Hydraulics test"
+        ],
+        "manufacturer": "Boeing",
+        "model": "Boeing 777",
+        "next maintenance date": "2025-06-07 09:00",
+        "range": 7800.0,
+        "seating capacity": 310
+    },
+    {
+        "ID": "AC008",
+        "last maintenance date": "2025-05-08 08:45",
+        "maintenance history": [
+            "Engine oil change",
+            "Avionics check",
+            "Tire replacement",
+            "Cabin pressure test"
+        ],
+        "manufacturer": "SomeManufacturer",
+        "model": "Boeing 737",
+        "next maintenance date": "2025-05-10 15:45",
+        "range": 3500.0,
+        "seating capacity": 200
+    },
+    {
+        "ID": "AC009",
+        "last maintenance date": "0000-01-01 00:00",
+        "maintenance history": [
+            "Electrical system check",
+            "Engine check",
+            "Wing inspection",
+            "Landing gear check",
+            "Maintenance Date changed from 0000-01-01 00:00 to 2025-05-10 15:45. Reason: engine problem"
+        ],
+        "manufacturer": "SomeManufacturer",
+        "model": "Aircraft Y",
+        "next maintenance date": "2025-05-10 15:45",
+        "range": 3200.0,
+        "seating capacity": 180
+    },
+    {
+        "ID": "AC010",
+        "last maintenance date": "2025-05-10 15:45",
+        "maintenance history": [
+            "Fuel filter replacement",
+            "Cabin pressure test",
+            "Avionics check",
+            "Hydraulics test"
+        ],
+        "manufacturer": "SomeManufacturer",
+        "model": "Aircraft Z",
+        "next maintenance date": "2025-06-10 15:45",
+        "range": 4500.0,
+        "seating capacity": 215
+    },
+    {
+        "ID": "AC011",
+        "last maintenance date": "2025-05-11 09:30",
+        "maintenance history": [
+            "Wing inspection",
+            "Hydraulics test",
+            "Landing gear check",
+            "Engine check"
+        ],
+        "manufacturer": "Embraer",
+        "model": "Embraer E190",
+        "next maintenance date": "2025-06-11 09:30",
+        "range": 2200.0,
+        "seating capacity": 100
+    },
+    {
+        "ID": "AC012",
+        "last maintenance date": "2025-05-12 13:20",
+        "maintenance history": [
+            "Engine check",
+            "Composite fuselage test",
+            "Hydraulics upgrade",
+            "Avionics check"
+        ],
+        "manufacturer": "Boeing",
+        "model": "Boeing 787 Dreamliner",
+        "next maintenance date": "2025-06-12 13:20",
+        "range": 8500.0,
+        "seating capacity": 290
+    },
+    {
+        "ID": "AC013",
+        "last maintenance date": "2025-05-13 07:10",
+        "maintenance history": [
+            "Avionics upgrade",
+            "Cabin pressure test",
+            "Landing gear check",
+            "Wing inspection"
+        ],
+        "manufacturer": "Airbus",
+        "model": "Airbus A350",
+        "next maintenance date": "2025-06-13 07:10",
+        "range": 8700.0,
+        "seating capacity": 300
+    },
+    {
+        "ID": "AC014",
+        "last maintenance date": "2025-05-14 06:55",
+        "maintenance history": [
+            "Engine oil change",
+            "Avionics check",
+            "Hydraulics test",
+            "Paint inspection"
+        ],
+        "manufacturer": "Boeing",
+        "model": "Boeing 717",
+        "next maintenance date": "2025-06-14 06:55",
+        "range": 2000.0,
+        "seating capacity": 110
+    },
+    {
+        "ID": "AC015",
+        "last maintenance date": "2025-05-15 08:15",
+        "maintenance history": [
+            "Tire replacement",
+            "Fuel system test",
+            "Engine check",
+            "Wing inspection"
+        ],
+        "manufacturer": "Airbus",
+        "model": "Airbus A318",
+        "next maintenance date": "2025-06-15 08:15",
+        "range": 3100.0,
+        "seating capacity": 107
+    }
+]

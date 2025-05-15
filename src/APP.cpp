@@ -38,8 +38,8 @@ void APP::start()
             try{
                 std::cout<<"Please select your role\n"
                 "1. Administrator\n"
-                "2. Booking Agent\n"
-                "3. Passenger\n"
+                "2. Passenger\n"
+                "3. Booking Agent\n"
                 "Enter choice: ";
                 choice = IOStreamHelper::InputNumeric();
                 LoginAction::UserRole ur = static_cast<LoginAction::UserRole>(choice);

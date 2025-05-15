@@ -10,6 +10,9 @@ class FlightAttendant : public CrewAttendant {
     FlightAttendant();
     FlightAttendant(const FlightAttendant & other) = default;
     FlightAttendant(FlightAttendant && other) = default;
+    FlightAttendant& operator = (const FlightAttendant & other) = default;
+    FlightAttendant& operator = (FlightAttendant && other) = default;
+    bool operator == (const FlightAttendant &other) const;
 };
 using FAPtr = std::shared_ptr<FlightAttendant>;
 std::istream& operator >> (std::istream & is, FlightAttendant& pilot);

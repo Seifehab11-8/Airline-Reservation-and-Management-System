@@ -12,7 +12,8 @@ class Flight;
 class FlightManager : public IManager{
     private:
     Json_file_ptr file_access_ptr = std::make_shared<JSONFileManager>(FLIGHT_FILE_PATH);
-    Json_file_ptr crew_file_access_ptr = std::make_shared<JSONFileManager>(FLIGHT_CREW_FILE_PATH);
+    Json_file_ptr pilot_file_access_ptr = std::make_shared<JSONFileManager>(FLIGHT_PILOT_FILE_PATH);
+    Json_file_ptr flightAttendant_file_access_ptr = std::make_shared<JSONFileManager>(FLIGHT_ATTENDANT_FILE_PATH);
     Json_file_ptr passenger_file_access_ptr = std::make_shared<JSONFileManager>(PASSENGER_FILE_PATH);
     Json_file_ptr reservation_file_access_ptr = std::make_shared<JSONFileManager>(RESERVATION_FILE_PATH);
     public:

@@ -10,6 +10,8 @@ class Person {
     Person() = default;
     Person(const Person& other) = default;
     Person(Person &&other) = default;
+    Person& operator = (const Person &other) = default;
+    Person& operator = (Person &&other) = default;
     virtual ~Person() = default;
     void setName(std::string name);
     void setID(std::string id);

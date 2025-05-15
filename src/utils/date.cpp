@@ -1,5 +1,6 @@
 #include "../../header/utils/Date.hpp"
-#include <format>
+#include <iomanip>
+#include <sstream>
 #include <iostream>
 void Date::setDate(int day, int month, int year)
 {
@@ -36,6 +37,53 @@ std::ostream& operator <<(std::ostream& os, const Date & date)
 {
     os<<date.year<<"-"<<date.month<<"-"<<date.day<<" "<<date.hour<<":"<<date.min;
     return os;
+}
+DatePtr Date::processMonthYearFormat(const std::string &date)
+{
+    DatePtr datePtr = std::make_shared<Date>();
+    std::string monthText;
+    std::string yearText;
+    std::stringstream dateStream(date);
+    std::getline(dateStream, monthText, '-');
+    std::getline(dateStream, yearText, '-');
+    try{
+        datePtr->month = std::stoi(monthText);
+        datePtr->year = std::stoi(yearText);
+    }
+    catch(const std::exception &e) {
+        std::cerr<<e.what()<<std::endl;
+        datePtr->month = 0;
+        datePtr->year = 0;
+    }
+    return datePtr;
+}
+DatePtr Date::processDateFormat(const std::string &date)
+{
+    DatePtr datePtr = std::make_shared<Date>();
+    std::string dateText;
+    std::stringstream dateStream(date);
+    std::getline(dateStream, dateText, ' ');
+    try{
+        std::string line;
+        std::stringstream dateStream(dateText);
+        std::getline(dateStream, line, '-');
+        datePtr->year = std::stoi(line);
+    
+        std::getline(dateStream, line, '-');
+        datePtr->month = std::stoi(line);
+    
+        std::getline(dateStream, line, '-');
+        datePtr->day = std::stoi(line);
+    }
+    catch(const std::exception &e) {
+        std::cerr<<e.what()<<std::endl;
+        datePtr->year = 0;
+        datePtr->month = 0;
+        datePtr->day = 0;
+        datePtr->hour = 0;
+        datePtr->min = 0;
+    }
+    return datePtr;
 }
 std::istream& operator >>(std::istream& is, Date & date)
 {
@@ -159,11 +207,17 @@ void Date::from_string(std::string str)
         min = 0; // fallback
     }
 }
-
 std::string Date::to_string() const
 {
-    return fullDateText;
+    std::ostringstream oss;
+    oss << std::setw(4) << std::setfill('0') << year << "-"
+        << std::setw(2) << std::setfill('0') << month << "-"
+        << std::setw(2) << std::setfill('0') << day << " "
+        << std::setw(2) << std::setfill('0') << hour << ":"
+        << std::setw(2) << std::setfill('0') << min;
+    return oss.str();
 }
+
 double Date::differenceHoursMin(const Date &other) const
 {
     // Convert each Date's hours/minutes into total minutes
@@ -173,4 +227,22 @@ double Date::differenceHoursMin(const Date &other) const
     // Calculate difference (in minutes) and convert to hours
     double diffMinutes = static_cast<double>(totalThis - totalOther);
     return diffMinutes / 60.0;
+}
+std::string Date::monthToText(int month)
+{
+    switch(month) {
+        case 1: return "January";
+        case 2: return "February";
+        case 3: return "March";
+        case 4: return "April";
+        case 5: return "May";
+        case 6: return "June";
+        case 7: return "July";
+        case 8: return "August";
+        case 9: return "September";
+        case 10: return "October";
+        case 11: return "November";
+        case 12: return "December";
+        default: return "";
+    }
 }

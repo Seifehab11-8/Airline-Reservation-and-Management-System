@@ -7,7 +7,7 @@ class IPayment;
 class Reservation {
     private:
     std::string flightNumber; 
-    std::string passengerID; 
+    std::string passengerUsername; 
     std::string seatNumber;
     int id;
     std::string status = "Pending";
@@ -23,7 +23,7 @@ public:
     ~Reservation() = default;
 
     std::string getFlightNumber() const;
-    std::string getPassengerID() const;
+    std::string getPassengerUsername() const;
     std::string getSeatNumber() const;
     int getID() const;
     std::string getStatus() const;
@@ -33,7 +33,7 @@ public:
     void setPricePaid(double price);
     void setPaymentMethod(std::shared_ptr<IPayment> paymentMethod);
     void setFlightNumber(const std::string& flightNumber);
-    void setPassengerID(const std::string& passengerID);
+    void setPassengerUsername(const std::string& passengerUsername);
     void setSeatNumber(const std::string& seatNumber);
     void setID(int id);
     void setStatus(const std::string& status);

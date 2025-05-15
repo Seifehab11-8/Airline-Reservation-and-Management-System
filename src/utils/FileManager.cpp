@@ -36,7 +36,6 @@ bool FileManager::append(std::string text, int offset, bool overwriteFlag)
         f_ptr->close();
         // Reopen in original mode for further operations
         f_ptr->open(path, std::ios::in | std::ios::out);
-        std::cout << "File " << path << " has been successfully overwritten\n";
         return true;
     }
 
@@ -48,7 +47,6 @@ bool FileManager::append(std::string text, int offset, bool overwriteFlag)
     }
     (*f_ptr) << text;
     f_ptr->flush();
-    std::cout << "File " << path << " has been successfully updated\n";
     return true;
 }
 

@@ -11,9 +11,10 @@ std::shared_ptr<Reservation> BookingManager::book(Passenger& passenger, Flight& 
     auto reservation = std::make_shared<Reservation>();
     std::cout<<"Enter Seat Number (e.g., 12A): ";
     std::string seatNumber;
+    std::cin.ignore();
     std::getline(std::cin, seatNumber);
     reservation->setFlightNumber(flight.getFlightNumber());
-    reservation->setPassengerID(passenger.getID());
+    reservation->setPassengerUsername(passenger.getUsername());
     //checks for seat number
     // 1. the seat number is correct
     // 2. the seat number is not already booked
@@ -72,7 +73,17 @@ std::shared_ptr<Reservation> BookingManager::book(Passenger& passenger, Flight& 
         else {
             throw std::invalid_argument("Invalid payment method.");
         }
+        std::cout << "Payment of $" << flight.getPrice() << " made. Remaining balance: $" << passenger.getBalance() << std::endl<<std::endl;
         reservationPtr->append(*reservation);
+        passenger.appendFlight(flight.getFlightNumber());
+        auto passengers = passengerPtr->getArray<Passenger>();
+        int passengerIndex = std::distance(passengers.begin(), 
+            std::find_if(passengers.begin(), passengers.end(), 
+            [&passenger](const Passenger& p) { return p.getUsername() == passenger.getUsername(); }));
+        if (passengerIndex >= passengerPtr->getArray<Passenger>().size()) {
+            throw std::runtime_error("Passenger not found.");
+        }
+        passengerPtr->update(passengerIndex, passenger);
     }
     catch(const std::runtime_error& e) {
         std::cout << e.what() << std::endl;
@@ -83,7 +94,7 @@ std::shared_ptr<Reservation> BookingManager::book(Passenger& passenger, Flight& 
         return nullptr;
     }
     catch(const std::invalid_argument& e) {
-        std::cout << "Invalid seat number format." << std::endl;
+        std::cout << e.what() << std::endl;
         return nullptr;
     }
     catch(const std::exception& e) {

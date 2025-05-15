@@ -11,6 +11,9 @@ class Pilot : public CrewAttendant {
     Pilot();
     Pilot(const Pilot & other) = default;
     Pilot(Pilot && other) = default;
+    Pilot& operator = (const Pilot & other) = default;
+    Pilot& operator = (Pilot &&other) = default;
+    bool operator == (const Pilot &other) const;
 };
 using PilotPtr = std::shared_ptr<Pilot>;
 std::istream& operator >> (std::istream & is, Pilot& pilot);

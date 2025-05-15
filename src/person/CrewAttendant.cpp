@@ -16,6 +16,4 @@ void CrewAttendant::setOccupation(const bool occupation) {
 bool CrewAttendant::getOccupation() const {
     return occupation;
 }
-bool CrewAttendant::operator==(const CrewAttendant &other) const {
-    return (this->id == other.id);
-}
+

@@ -19,8 +19,9 @@ void Passenger::viewMainMenu() {
                     "1. Search Flights\n"
                     "2. View My Reservations\n"
                     "3. Check-In\n"
-                    "4. Logout\n"
-                    "Enter choice: \n";
+                    "4. View Notifications\n"
+                    "5. Logout\n"
+                    "Enter choice: ";
         choice = IOStreamHelper::InputNumeric();
         PassengerAction::PassengerMenuOption bamo = static_cast<PassengerAction::PassengerMenuOption>(choice);
         switch(bamo) {
@@ -36,10 +37,13 @@ void Passenger::viewMainMenu() {
             case PassengerAction::PassengerMenuOption::LOGOUT:
                 std::cout<<"Logging out..."<<std::endl;
                 break;
+            case PassengerAction::PassengerMenuOption::VIEW_NOTIFICATIONS:
+                viewMyNotification();
+                break;
             default:
                 std::cout<<"Invalid choice. Please try again."<<std::endl;
         }
-    }while(choice != 4);
+    }while(choice != 5);
 }
 void Passenger::appendPreference(std::string pref)
 {
@@ -146,8 +150,12 @@ void Passenger::searchFlight() {
         }
 
         std::cout<<"--- Available Flights ---"<<std::endl;
+        DatePtr datePtr = Date::processDateFormat(date);
         for(const auto& it: flights) {
-            if(it.getOrigin() != origin || it.getDestination() != destination || it.getDeptTime()->to_string() != date) {
+            if(it.getOrigin() != origin || it.getDestination() != destination 
+            || it.getDeptTime()->getDay() != datePtr->getDay()
+            || it.getDeptTime()->getMonth() != datePtr->getMonth()
+            || it.getDeptTime()->getYear() != datePtr->getYear()) {
                 continue;
             }
             std::cout<<counter<<". \n"<<it<<std::endl;
@@ -155,8 +163,7 @@ void Passenger::searchFlight() {
         }
         std::cout<<"Enter the Flight Number you wish to book (or '0' to cancel): ";
         std::string flightNumber;
-        std::cin.ignore();
-        std::getline(std::cin, flightNumber);
+        std::cin>>flightNumber;
         if(flightNumber == "0") {
             std::cout<<"Back to Menu."<<std::endl;
             return;
@@ -176,7 +183,7 @@ void Passenger::searchFlight() {
                 flightPtr->update(flight_index, *it);
                 std::cout<<"Flight booked successfully!"<<std::endl;
                 std::cout<<"Reservation ID: R"<<reservation->getID()<<std::endl;
-                std::cout<<"Flight: "<<it->getFlightNumber()<<" from"<<it->getOrigin()
+                std::cout<<"Flight: "<<it->getFlightNumber()<<" from "<<it->getOrigin()
                             <<" to "<<it->getDestination()<<"\n"
                             <<"Seat: "<<reservation->getSeatNumber()<<"\n"
                             <<"Total Cost: "<<reservation->getPricePaid()<<std::endl;
@@ -202,7 +209,7 @@ void Passenger::viewMyReservation() {
         std::cout<<"--- My Reservations ---"<<std::endl;
         int counter = 1;
         for(const auto& it: reservations) {
-            if(it.getPassengerID() == this->id) {
+            if(it.getPassengerUsername() == this->username) {
                 auto flight = std::find_if(flights.begin(), flights.end(), [&it](const Flight& flight) {
                     return flight.getFlightNumber() == it.getFlightNumber();
                 });
@@ -238,8 +245,8 @@ void Passenger::checkIn() {
         std::getline(std::cin, id);
         try{
             int reservation_id = std::stoi(id.substr(1, id.length()-1));
-            auto it = std::find_if(reservations.begin(), reservations.end(), [&reservation_id](const Reservation& reservation) {
-                return reservation.getID() == reservation_id;
+            auto it = std::find_if(reservations.begin(), reservations.end(), [this, &reservation_id](const Reservation& reservation) {
+                return (reservation.getID() == reservation_id) && (reservation.getPassengerUsername() == this->username);
             });
             if(it != reservations.end()) {
                 if(it->getStatus() == "Confirmed") {
@@ -254,7 +261,7 @@ void Passenger::checkIn() {
                     return flight.getFlightNumber() == it->getFlightNumber();
                 });
                 if(flight != flights.end()) {
-                    std::cout<<"Check-In successful!\n"
+                    std::cout<<"\n\nCheck-In successful!\n"
                             <<"Boarding Pass: \n"
                             <<"---------------------------------\n"
                             <<"Flight: "<<it->getFlightNumber()<<"\n"
@@ -281,9 +288,9 @@ void Passenger::checkIn() {
                         boardingTime->setDate(deptTime->getDay(), deptTime->getMonth(), deptTime->getYear());
                         boardingTime->setTime(newHour, newMin);
 
-                        std::cout << boardingTime->to_string() << std::endl;
+                        std::cout << boardingTime->to_string() << std::endl<< std::endl;
                     } else {
-                        std::cout << "No departure time available.\n";
+                        std::cout << "No departure time available.\n\n";
                     }
                     it->setStatus("Confirmed");
                     int res_index = std::distance(reservations.begin(), it);
@@ -321,8 +328,8 @@ bool Passenger::operator==(const Passenger& other) const
 
 std::ostream& operator<<(std::ostream& os, const Passenger& passenger)
 {
-    os << "Passenger username: " << passenger.username << "\n";
-    os<< "Name: " << passenger.name << "\n";
+    os << "\nPassenger username: " << passenger.username << "\n";
+    os << "Name: " << passenger.name << "\n";
     os << "ID: " << passenger.id << "\n";
     os << "Role: " << passenger.role << "\n";
     os << "Contact: " << passenger.contact << "\n";
@@ -338,5 +345,7 @@ std::ostream& operator<<(std::ostream& os, const Passenger& passenger)
     for (const auto& note : passenger.notifications) {
         os << note << " ";
     }
+    os << "\nBalance: " << passenger.balance << "\n";
+    os << "---------------------------------\n";
     return os;
 }

@@ -1,1 +1,97 @@
-[]
+[
+    {
+        "balance": 22705.0,
+        "contact": "1026206806",
+        "flight history": [
+            "AA105",
+            "AA106"
+        ],
+        "id": "2346",
+        "login status": false,
+        "name": "seif",
+        "notification": [
+            "Your Reservation for flight AA105 has been Canceled"
+        ],
+        "password": "$2a$12$P79DmJbF5UrDLnhvsszC/eEQ55Ayk8Y84EyrTcPSug1kEbyDE9fpu",
+        "preference": [
+            "window seat"
+        ],
+        "role": "passenger",
+        "username": "seifallaEhab"
+    },
+    {
+        "balance": 3972.0,
+        "contact": "25908543",
+        "flight history": [
+            "AA103",
+            "AA103"
+        ],
+        "id": "2346",
+        "login status": false,
+        "name": "sad",
+        "notification": [],
+        "password": "$2a$12$VZgrfLC./BSmR7IuYjK2/e5rDnVthUG4yfvzUMYBy7fSz7qP7PTnG",
+        "preference": [
+            "dsfg"
+        ],
+        "role": "passenger",
+        "username": "saddf"
+    },
+    {
+        "balance": 2070.0,
+        "contact": "12345678",
+        "flight history": [
+            "AA223"
+        ],
+        "id": "223",
+        "login status": false,
+        "name": "seif",
+        "notification": [],
+        "password": "$2a$12$FelEnhu/sqHx4aiOLcZ2FuukIKiMu845yjKXfP1q4bBsRBmDhK.Ri",
+        "preference": [
+            "front seat",
+            "window seat"
+        ],
+        "role": "passenger",
+        "username": "seifehab118"
+    },
+    {
+        "balance": 3000.0,
+        "contact": "12345678",
+        "flight history": [
+            "AA104"
+        ],
+        "id": "234",
+        "login status": false,
+        "name": "seif",
+        "notification": [
+            "Your Reservation for flight AA104 has been Canceled"
+        ],
+        "password": "$2a$12$ReCTOZNvw251GDpMITzWpeczguJ4uf0jJ1bW127mqzd/jD1xC5atO",
+        "preference": [
+            "front seat"
+        ],
+        "role": "passenger",
+        "username": "seifehab11"
+    },
+    {
+        "balance": 220.0,
+        "contact": "12345678",
+        "flight history": [
+            "AA103",
+            "AA112"
+        ],
+        "id": "213",
+        "login status": false,
+        "name": "seif",
+        "notification": [
+            "Your flight AA112 has been Delayed to 2025-05-21 11:45"
+        ],
+        "password": "$2a$12$L.yJvumg8svEUET/uD21oujLezIPyHw9IO67ClSmSEJANU8l1Gpra",
+        "preference": [
+            "front seat"
+        ],
+        "role": "passenger",
+        "username": "seif223"
+    }
+]

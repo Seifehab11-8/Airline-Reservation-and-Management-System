@@ -14,7 +14,7 @@ namespace nlohmann
         static void to_json(json& j, const Reservation& p)
         {
             j = json{{"flightNumber", p.getFlightNumber()},
-                    {"passengerID", p.getPassengerID()},
+                    {"passengerUsername", p.getPassengerUsername()},
                     {"seatNumber", p.getSeatNumber()},
                     {"id", p.getID()},
                     {"status", p.getStatus()},
@@ -51,7 +51,7 @@ namespace nlohmann
         static void from_json(const json& j, Reservation& p)
         {
             p.setFlightNumber(j.at("flightNumber").get<std::string>());
-            p.setPassengerID(j.at("passengerID").get<std::string>());
+            p.setPassengerUsername(j.at("passengerUsername").get<std::string>());
             p.setSeatNumber(j.at("seatNumber").get<std::string>());
             p.setID(j.at("id").get<int>());
             p.setStatus(j.at("status").get<std::string>());
@@ -67,7 +67,7 @@ namespace nlohmann
                 p.setPaymentMethod(cc);
             }
             else if (p.getPaymentMethodType() == "Paypal")
-            {
+            {   
                 std::shared_ptr<Paypal> pp = std::make_shared<Paypal>();
                 pp->setEmail(j.at("paymentMethod").at("email").get<std::string>());
                 pp->setPassword(j.at("paymentMethod").at("password").get<std::string>());

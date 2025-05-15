@@ -22,8 +22,8 @@ namespace PassengerAction{
     enum class PassengerMenuOption {
         SEARCH_FLIGHTS = 1,
         VIEW_RESERVATIONS,
-        VIEW_BOOKINGS,
         CHECK_IN,
+        VIEW_NOTIFICATIONS,
         LOGOUT
     };
 }

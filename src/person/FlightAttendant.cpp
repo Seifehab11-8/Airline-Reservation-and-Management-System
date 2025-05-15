@@ -18,3 +18,6 @@ std::ostream& operator <<(std::ostream & os, const FlightAttendant& attendant){
 FlightAttendant::FlightAttendant() : CrewAttendant() {
     this->role = "Flight Attendant";
 }
+bool FlightAttendant::operator == (const FlightAttendant &other) const {
+    return this->id == other.id;
+}
